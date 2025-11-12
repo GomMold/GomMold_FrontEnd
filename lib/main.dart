@@ -199,7 +199,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'GomMold',
       theme: ThemeData(primarySwatch: Colors.green),
-      home: const HomePage(),
+      //home: const HomePage(),
+      home: const LoginPage(),
     );
   }
 }
