@@ -1,0 +1,1 @@
+@rpath/gommold_frontend.debug.dylib

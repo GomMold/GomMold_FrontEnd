@@ -1,0 +1,1 @@
+ /Users/nurainsyafiqah/gommold/gommold_frontend/.dart_tool/flutter_build/e7f22ab65d15bb0c7a5c805721df99fe/native_assets.json: 

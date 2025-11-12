@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "836579738735",
+    "project_id": "gommold-c6654",
+    "storage_bucket": "gommold-c6654.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836579738735:android:98e435ea4632e2edb3799a",
+        "android_client_info": {
+          "package_name": "com.example.gommold_frontend"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKOnDy8TdNdqi3MkAWqxBo2effxfs_ug0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
