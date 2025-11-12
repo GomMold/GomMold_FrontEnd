@@ -121,7 +121,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }*/
 
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -157,5 +158,112 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}*/
+
+import 'dart:io' show Platform;
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Load .env file
+  await dotenv.load(fileName: "assets/.env");
+
+  // Initialize Firebase based on current platform
+  if (kIsWeb) {
+    await Firebase.initializeApp(options: DefaultFirebaseOptions.web);
+  } else if (Platform.isAndroid) {
+    await Firebase.initializeApp(options: DefaultFirebaseOptions.android);
+  } else if (Platform.isIOS) {
+    await Firebase.initializeApp(options: DefaultFirebaseOptions.ios);
+  } else if (Platform.isMacOS) {
+    await Firebase.initializeApp(options: DefaultFirebaseOptions.macos);
+  } else if (Platform.isWindows) {
+    await Firebase.initializeApp(options: DefaultFirebaseOptions.windows);
+  } else {
+    throw UnsupportedError('This platform is not supported');
+  }
+
+  runApp(const MyApp());
 }
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'GomMold',
+      theme: ThemeData(primarySwatch: Colors.green),
+      home: const HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: Text('Firebase connected ✅'),
+      ),
+    );
+  }
+}
+
+/*import 'dart:io' show Platform;
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Load .env file from assets
+  await dotenv.load(fileName: "assets/.env");
+
+  // Initialize Firebase for the current platform
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'GomMold',
+      theme: ThemeData(primarySwatch: Colors.green),
+      home: const HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: Text('Firebase connected ✅'),
+      ),
+    );
+  }
+}*/
+
+
+
 

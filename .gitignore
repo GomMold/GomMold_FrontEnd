@@ -1,2 +1,117 @@
-firebase_options.dart
+.dart_tool/
+.packages
+.pub-cache/
+build/
+pubspec.lock
+.idea/
+.vscode/
+*.iml
 .DS_Store
+.env
+.env.*
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+*.log
+firebase_options.dart 
+
+#android
+gradle-wrapper.jar
+/.gradle
+/captures/
+/gradlew
+/gradlew.bat
+/local.properties
+GeneratedPluginRegistrant.java
+.cxx/
+
+# Remember to never publicly share your keystore.
+# See https://flutter.dev/to/reference-keystore
+key.properties
+**/*.keystore
+**/*.jks
+firebase_options.dart 
+
+#ios
+**/dgph
+*.mode1v3
+*.mode2v3
+*.moved-aside
+*.pbxuser
+*.perspectivev3
+**/*sync/
+.sconsign.dblite
+.tags*
+**/.vagrant/
+**/DerivedData/
+Icon?
+**/Pods/
+**/.symlinks/
+profile
+xcuserdata
+**/.generated/
+Flutter/App.framework
+Flutter/Flutter.framework
+Flutter/Flutter.podspec
+Flutter/Generated.xcconfig
+Flutter/ephemeral/
+Flutter/app.flx
+Flutter/app.zip
+Flutter/flutter_assets/
+Flutter/flutter_export_environment.sh
+ServiceDefinitions.json
+Runner/GeneratedPluginRegistrant.*
+
+# Exceptions to above rules.
+!default.mode1v3
+!default.mode2v3
+!default.pbxuser
+!default.perspectivev3
+firebase_options.dart 
+
+#linux
+flutter/ephemeral
+firebase_options.dart 
+
+#macos
+# Flutter-related
+**/Flutter/ephemeral/
+**/Pods/
+.DS_Store
+
+# Xcode-related
+**/dgph
+**/xcuserdata/
+
+#windows
+flutter/ephemeral/
+
+# Visual Studio user-specific files.
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio build-related files.
+x64/
+x86/
+
+# Visual Studio cache files
+# files ending in .cache can be ignored
+*.[Cc]ache
+# but keep track of directories ending in .cache
+!*.[Cc]ache/
+firebase_options.dart 
+
+# Environment
+.env
+.env.*
+
+# Android/iOS config
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+
+# Logs
+*.log
+
+google-services.json
+GoogleService-Info.plist

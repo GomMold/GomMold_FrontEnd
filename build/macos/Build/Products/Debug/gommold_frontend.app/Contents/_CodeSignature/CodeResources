@@ -27,10 +27,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			T2v6Q58sEOovebmU7iWgTaTqiHQ=
+			qetEI2hXFd1UEc/Zn+3dE13AXaw=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"4f6bfa439f2c10ea2f79b994ee25a04da4ea8874"</string>
+			<string>cdhash H"a9eb4423685715dd5411cfd99feddd135dc05dac"</string>
 		</dict>
 		<key>Frameworks/FirebaseCore.framework</key>
 		<dict>
@@ -68,6 +68,33 @@
 			<key>requirement</key>
 			<string>cdhash H"61b8aeebd84f4e995d2b43afe7f2fdb293f7040b"</string>
 		</dict>
+		<key>Frameworks/file_selector_macos.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			dew7MRANJdhZnX7KDp/XdRtckbI=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"75ec3b31100d25d8599d7eca0e9fd7751b5c91b2"</string>
+		</dict>
+		<key>Frameworks/flutter_secure_storage_macos.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			wK2qQfHJV8rcTmV6e2ODN7xn9Fg=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"c0adaa41f1c957cadc4e657a7b638337bc67f458"</string>
+		</dict>
+		<key>Frameworks/path_provider_foundation.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			aJFo5SswmnrTHEiWUg3y1+MAD0U=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"689168e52b309a7ad31c4896520df2d7e3000f45"</string>
+		</dict>
 		<key>MacOS/__preview.dylib</key>
 		<dict>
 			<key>cdhash</key>
@@ -81,10 +108,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			7/6l79zrcsdKImptI0q+kUryiXU=
+			TycpHbjOlg20d6nD2IRCY5sDxyw=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"effea5efdceb72c74a226a6d234abe914af28975"</string>
+			<string>cdhash H"4f27291db8ce960db477a9c3d88442639b03c72c"</string>
 		</dict>
 		<key>Resources/AppIcon.icns</key>
 		<dict>
