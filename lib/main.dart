@@ -160,33 +160,24 @@ class HomePage extends StatelessWidget {
   }
 }*/
 
-import 'dart:io' show Platform;
-import 'package:flutter/foundation.dart' show kIsWeb;
+/*import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
-Future<void> main() async {
+// Import your real screens
+import 'src/screens/splash_page.dart';
+import 'src/screens/login_page.dart';
+import 'src/screens/signup_page.dart';
+import 'src/screens/home_page.dart';
+import 'src/screens/image_page.dart';
+import 'src/screens/identify_page.dart';
+import 'src/screens/gallery_page.dart';
+import 'src/screens/chatbot_page.dart';
+import 'src/screens/settings_page.dart';
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // Load .env file
-  await dotenv.load(fileName: "assets/.env");
-
-  // Initialize Firebase based on current platform
-  if (kIsWeb) {
-    await Firebase.initializeApp(options: DefaultFirebaseOptions.web);
-  } else if (Platform.isAndroid) {
-    await Firebase.initializeApp(options: DefaultFirebaseOptions.android);
-  } else if (Platform.isIOS) {
-    await Firebase.initializeApp(options: DefaultFirebaseOptions.ios);
-  } else if (Platform.isMacOS) {
-    await Firebase.initializeApp(options: DefaultFirebaseOptions.macos);
-  } else if (Platform.isWindows) {
-    await Firebase.initializeApp(options: DefaultFirebaseOptions.windows);
-  } else {
-    throw UnsupportedError('This platform is not supported');
-  }
 
   runApp(const MyApp());
 }
@@ -194,76 +185,111 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'GomMold',
-      theme: ThemeData(primarySwatch: Colors.green),
-      //home: const HomePage(),
-      home: const LoginPage(),
+  Future<FirebaseApp> _initializeFirebase() async {
+    // Use the generated firebase_options for current platform
+    return await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
     );
   }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Firebase connected ✅'),
-      ),
-    );
-  }
-}
+    return FutureBuilder<FirebaseApp>(
+      future: _initializeFirebase(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.done) {
+          return MaterialApp(
+            title: 'GomMold',
+            theme: ThemeData(primarySwatch: Colors.green),
+            initialRoute: '/splash',
+            routes: {
+              '/splash': (context) => const SplashPage(),
+              '/login': (context) => const LoginPage(),
+              '/signup': (context) => const SignupPage(),
+              '/home': (context) => const HomePage(),
+              '/image': (context) => const ImagePage(),
+              '/identify': (context) => const IdentifyPage(),
+              '/gallery': (context) => const GalleryPage(),
+              '/chatbot': (context) => const ChatbotPage(),
+              '/settings': (context) => const SettingsPage(),
+            },
+          );
+        }
 
-/*import 'dart:io' show Platform;
-import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+        if (snapshot.hasError) {
+          return MaterialApp(
+            home: Scaffold(
+              body: Center(
+                child: Text('Error initializing Firebase:\n${snapshot.error}'),
+              ),
+            ),
+          );
+        }
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  // Load .env file from assets
-  await dotenv.load(fileName: "assets/.env");
-
-  // Initialize Firebase for the current platform
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'GomMold',
-      theme: ThemeData(primarySwatch: Colors.green),
-      home: const HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Firebase connected ✅'),
-      ),
+        return const MaterialApp(
+          home: Scaffold(
+            body: Center(child: CircularProgressIndicator()),
+          ),
+        );
+      },
     );
   }
 }*/
+
+import 'package:flutter/material.dart';
+
+// Import screens
+import 'src/screens/splash_page.dart';
+import 'src/screens/login_page.dart';
+import 'src/screens/signup_page.dart';
+import 'src/screens/home_page.dart';
+import 'src/screens/image_page.dart';
+import 'src/screens/identify_page.dart';
+import 'src/screens/gallery_page.dart';
+import 'src/screens/chatbot_page.dart';
+import 'src/screens/settings_page.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'GomMold',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/splash',
+      routes: {
+        '/splash': (context) => const SplashPage(),
+        '/login': (context) => const LoginPage(),
+        '/signup': (context) => const SignupPage(),
+        '/home': (context) => const HomePage(),
+        '/image': (context) => const ImagePage(),
+        '/identify': (context) => const IdentifyPage(),
+        '/gallery': (context) => const GalleryPage(),
+        '/chatbot': (context) => const ChatbotPage(),
+        '/settings': (context) => const SettingsPage(),
+      },
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

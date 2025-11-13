@@ -126,14 +126,24 @@
     "swift-dependencies" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/_ObjC_HeartbeatsPayload.swiftdeps",
     "swiftmodule" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/_ObjC_HeartbeatsPayload~partial.swiftmodule"
   },
-  "/Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/Utilities/UnfairLock.swift" : {
-    "const-values" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/UnfairLock.swiftconstvalues",
-    "dependencies" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/UnfairLock.d",
-    "diagnostics" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/UnfairLock.dia",
-    "index-unit-output-path" : "/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/UnfairLock.o",
-    "llvm-bc" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/UnfairLock.bc",
-    "object" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/UnfairLock.o",
-    "swift-dependencies" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/UnfairLock.swiftdeps",
-    "swiftmodule" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/UnfairLock~partial.swiftmodule"
+  "/Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/Utilities/AtomicBox.swift" : {
+    "const-values" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/AtomicBox.swiftconstvalues",
+    "dependencies" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/AtomicBox.d",
+    "diagnostics" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/AtomicBox.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/AtomicBox.o",
+    "llvm-bc" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/AtomicBox.bc",
+    "object" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/AtomicBox.o",
+    "swift-dependencies" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/AtomicBox.swiftdeps",
+    "swiftmodule" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/AtomicBox~partial.swiftmodule"
+  },
+  "/Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/Utilities/FIRAllocatedUnfairLock.swift" : {
+    "const-values" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/FIRAllocatedUnfairLock.swiftconstvalues",
+    "dependencies" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/FIRAllocatedUnfairLock.d",
+    "diagnostics" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/FIRAllocatedUnfairLock.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/FIRAllocatedUnfairLock.o",
+    "llvm-bc" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/FIRAllocatedUnfairLock.bc",
+    "object" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/FIRAllocatedUnfairLock.o",
+    "swift-dependencies" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/FIRAllocatedUnfairLock.swiftdeps",
+    "swiftmodule" : "/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/FIRAllocatedUnfairLock~partial.swiftmodule"
   }
 }

@@ -1,7 +1,21 @@
 /Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/BoringSSL-GRPC/openssl_grpc.framework
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/FirebaseAppCheckInterop/FirebaseAppCheckInterop.framework
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/FirebaseAuth/FirebaseAuth.framework
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/FirebaseAuthInterop/FirebaseAuthInterop.framework
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/FirebaseCore/FirebaseCore.framework
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/FirebaseCoreExtension/FirebaseCoreExtension.framework
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/FirebaseCoreInternal/FirebaseCoreInternal.framework
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/FirebaseFirestore/FirebaseFirestore.framework
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/FirebaseFirestoreInternal/FirebaseFirestoreInternal.framework
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/FirebaseSharedSwift/FirebaseSharedSwift.framework
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/GTMSessionFetcher/GTMSessionFetcher.framework
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/GoogleUtilities/GoogleUtilities.framework
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/abseil/absl.framework
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/file_selector_macos/file_selector_macos.framework
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/flutter_secure_storage_macos/flutter_secure_storage_macos.framework
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/gRPC-C++/grpcpp.framework
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/gRPC-Core/grpc.framework
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/leveldb-library/leveldb.framework
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/nanopb/nanopb.framework
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/path_provider_foundation/path_provider_foundation.framework

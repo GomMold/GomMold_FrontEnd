@@ -27,28 +27,91 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			qetEI2hXFd1UEc/Zn+3dE13AXaw=
+			01HK7vl+hUP0eMBoURgzVcRQgJo=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"a9eb4423685715dd5411cfd99feddd135dc05dac"</string>
+			<string>cdhash H"d351caeef97e8543f478c06851183355c450809a"</string>
+		</dict>
+		<key>Frameworks/FirebaseAppCheckInterop.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			rh5bYKMUd+fZBSCIWaT7QXNrEdI=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"ae1e5b60a31477e7d905208859a4fb41736b11d2"</string>
+		</dict>
+		<key>Frameworks/FirebaseAuth.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			GJ+yCIgtukWd6uFAuDoXCmO5OfU=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"189fb208882dba459deae140b83a170a63b939f5"</string>
+		</dict>
+		<key>Frameworks/FirebaseAuthInterop.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			UNLkWS3Ajz19ZjeC75SXBY11Te4=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"50d2e4592dc08f3d7d663782ef9497058d754dee"</string>
 		</dict>
 		<key>Frameworks/FirebaseCore.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			WwUQAw0gHEhDPd9+DX73fFzhLeY=
+			9CRE0sS+rjWS2tOA+sBLmWJzV4k=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"5b0510030d201c48433ddf7e0d7ef77c5ce12de6"</string>
+			<string>cdhash H"f42444d2c4beae3592dad380fac04b9962735789"</string>
+		</dict>
+		<key>Frameworks/FirebaseCoreExtension.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			pq66UMVSuuMAasbjfFvZSoO/sXA=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"a6aeba50c552bae3006ac6e37c5bd94a83bfb170"</string>
 		</dict>
 		<key>Frameworks/FirebaseCoreInternal.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			35ATv5CvtUaP0gq7l37LG+4K2uA=
+			nnzni1pJLg98l866pOEiRQS9Sx0=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"df9013bf90afb5468fd20abb977ecb1bee0adae0"</string>
+			<string>cdhash H"9e7ce78b5a492e0f7c97cebaa4e1224504bd4b1d"</string>
+		</dict>
+		<key>Frameworks/FirebaseFirestore.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			QXiIj02LBnqJsbOKC0xdncfIFhw=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"4178888f4d8b067a89b1b38a0b4c5d9dc7c8161c"</string>
+		</dict>
+		<key>Frameworks/FirebaseFirestoreInternal.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			IodhuSchwB/8o+YF9kOBvsOwgWQ=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"228761b92721c01ffca3e605f64381bec3b08164"</string>
+		</dict>
+		<key>Frameworks/FirebaseSharedSwift.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			Mzodrpgyq8qFSjwZbZ5elQf3gFI=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"333a1dae9832abca854a3c196d9e5e9507f78052"</string>
 		</dict>
 		<key>Frameworks/FlutterMacOS.framework</key>
 		<dict>
@@ -59,14 +122,32 @@
 			<key>requirement</key>
 			<string>cdhash H"9503002210b47603c3a67ca5d43bf69b8b36bd00"</string>
 		</dict>
+		<key>Frameworks/GTMSessionFetcher.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			Uiivc/9oTXt3+4gHhMKhNjoUEyU=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"5228af73ff684d7b77fb880784c2a1363a141325"</string>
+		</dict>
 		<key>Frameworks/GoogleUtilities.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Ybiu69hPTpldK0Ov5/L9spP3BAs=
+			6lE1xV+Ebv7Qg8xSl7syus9DP2o=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"61b8aeebd84f4e995d2b43afe7f2fdb293f7040b"</string>
+			<string>cdhash H"ea5135c55f846efed083cc5297bb32bacf433f6a"</string>
+		</dict>
+		<key>Frameworks/absl.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			He6gc4QZey5NkH1AhBhjQIAKFAM=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"1deea07384197b2e4d907d4084186340800a1403"</string>
 		</dict>
 		<key>Frameworks/file_selector_macos.framework</key>
 		<dict>
@@ -85,6 +166,60 @@
 			</data>
 			<key>requirement</key>
 			<string>cdhash H"c0adaa41f1c957cadc4e657a7b638337bc67f458"</string>
+		</dict>
+		<key>Frameworks/grpc.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			xDGGA+SHepvsDbhKQwxWVZbxI18=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"c4318603e4877a9bec0db84a430c565596f1235f"</string>
+		</dict>
+		<key>Frameworks/grpcpp.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			FtvtVZUAnhnM42vG3VYCi29spT0=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"16dbed5595009e19cce36bc6dd56028b6f6ca53d"</string>
+		</dict>
+		<key>Frameworks/leveldb.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			uSPqIST84UlfB0RltxwndGO/Pt0=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"b923ea2124fce1495f074465b71c277463bf3edd"</string>
+		</dict>
+		<key>Frameworks/libswift_Concurrency.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			Pr3e+QFHQ3D2oyoywLeBrPU4s88=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"3ebddef901474370f6a32a32c0b781acf538b3cf" or cdhash H"2df8f77ca131cd10508992f453212709099ea525"</string>
+		</dict>
+		<key>Frameworks/nanopb.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			XtHJC+9oSF2RlmkayBFYunHC8+o=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"5ed1c90bef68485d9196691ac81158ba71c2f3ea"</string>
+		</dict>
+		<key>Frameworks/openssl_grpc.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			osb65R+q3bgtWwdm/I30q5FRgt4=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"a2c6fae51faaddb82d5b0766fc8df4ab915182de"</string>
 		</dict>
 		<key>Frameworks/path_provider_foundation.framework</key>
 		<dict>
@@ -108,10 +243,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			TycpHbjOlg20d6nD2IRCY5sDxyw=
+			mPJ4LGLK8YboaAKISbE2uhG5xcU=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"4f27291db8ce960db477a9c3d88442639b03c72c"</string>
+			<string>cdhash H"98f2782c62caf186e868028849b136ba11b9c5c5"</string>
 		</dict>
 		<key>Resources/AppIcon.icns</key>
 		<dict>

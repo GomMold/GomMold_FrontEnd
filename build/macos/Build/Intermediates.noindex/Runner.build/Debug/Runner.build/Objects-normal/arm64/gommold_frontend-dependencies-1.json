@@ -11,6 +11,11 @@
   },
   {
     "isFramework" : true,
+    "moduleName" : "AuthenticationServices",
+    "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/26.1\/AuthenticationServices.swiftmodule\/arm64e-apple-macos.swiftmodule"
+  },
+  {
+    "isFramework" : true,
     "moduleName" : "Combine",
     "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/26.1\/Combine.swiftmodule\/arm64e-apple-macos.swiftmodule"
   },
@@ -60,6 +65,11 @@
     "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/26.1\/CoreVideo.swiftmodule\/arm64e-apple-macos.swiftmodule"
   },
   {
+    "isFramework" : true,
+    "moduleName" : "CryptoKit",
+    "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/26.1\/CryptoKit.swiftmodule\/arm64e-apple-macos.swiftmodule"
+  },
+  {
     "isFramework" : false,
     "moduleName" : "Darwin",
     "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/26.1\/Darwin.swiftmodule\/arm64e-apple-macos.swiftmodule"
@@ -81,6 +91,16 @@
   },
   {
     "isFramework" : true,
+    "moduleName" : "FirebaseFirestore",
+    "modulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Products\/Debug\/FirebaseFirestore\/FirebaseFirestore.framework\/Modules\/FirebaseFirestore.swiftmodule\/arm64-apple-macos.swiftmodule"
+  },
+  {
+    "isFramework" : true,
+    "moduleName" : "FirebaseSharedSwift",
+    "modulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Products\/Debug\/FirebaseSharedSwift\/FirebaseSharedSwift.framework\/Modules\/FirebaseSharedSwift.swiftmodule\/arm64-apple-macos.swiftmodule"
+  },
+  {
+    "isFramework" : true,
     "moduleName" : "Foundation",
     "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/26.1\/Foundation.swiftmodule\/arm64e-apple-macos.swiftmodule"
   },
@@ -88,6 +108,11 @@
     "isFramework" : false,
     "moduleName" : "IOKit",
     "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/26.1\/IOKit.swiftmodule\/arm64e-apple-macos.swiftmodule"
+  },
+  {
+    "isFramework" : true,
+    "moduleName" : "LocalAuthentication",
+    "modulePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/swift\/macosx\/prebuilt-modules\/26.1\/LocalAuthentication.swiftmodule\/arm64e-apple-macos.swiftmodule"
   },
   {
     "isFramework" : false,
@@ -221,504 +246,560 @@
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/Accessibility.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Accessibility-YXYNY7GZ6Y7RVMO9X63YDMK2.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Accessibility-HMUM4QTOAWZLQ89IGPIVNJA7.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Accessibility"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/AppKit.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/AppKit-7T3HY6ATEU4MJH3I88MTIU498.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/AppKit-18B8RBMCHU2ZBWCV61PDJP2N1.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "AppKit"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/ApplicationServices.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/ApplicationServices-EI6CEDF65CW7E85S4CVRM30CY.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/ApplicationServices-44QKPGPAU0BZZVDE62A4368JK.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ApplicationServices"
   },
   {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Cryptexes\/OS\/System\/Library\/Frameworks\/AuthenticationServices.framework\/Modules\/module.modulemap",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/AuthenticationServices-12DN1G46FEX11POQHDHB0XPJD.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "AuthenticationServices"
+  },
+  {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CFNetwork.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CFNetwork-CO29WHH2I1OA9F4HHHAUIUAEX.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CFNetwork-DKYHWHONKTN8K0FACNSMV5KZ0.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CFNetwork"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/cups.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CUPS-B12BZXFRDJBLE7YKDPVDXI88P.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CUPS-4MMZ3BOAAXQJNICHHJG1D6WUQ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CUPS"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/Cocoa.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Cocoa-7N3HY413RKGP9BWW18GC2D0VG.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Cocoa-CVBFNQY1N5IRMVAE4DK3HD2CV.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Cocoa"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/ColorSync.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/ColorSync-C916VOQRFVZXJ51J4JKZ8WJ46.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/ColorSync-E3EZH3KJ4O0Y5A5265QCXOECR.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ColorSync"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreAudio.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreAudio-79V2877DZDXKMLORH09TNPTD.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreAudio-9JEP2NPMLKK2EMG3M2NFG4TZ7.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreAudio"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreAudioTypes.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreAudioTypes-9K0STJ45XZ00V3CC3F6QALA7S.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreAudioTypes-2MRE5S7UDIO6KAR93ZEC0GN38.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreAudioTypes"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreData.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreData-MOWL387KLF6O81VY3HOJ6UTU.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreData-B48QFRWZI86YO1GCYAH19U0ZJ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreData"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreFoundation.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreFoundation-81XOI0V442GMG99C1PITFYD72.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreFoundation-DYBLLJUHOD3GG86LE0YU8K58Z.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreFoundation"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreGraphics.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreGraphics-BRB1Y7BP27HUFHR1YQUBYUC0D.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreGraphics-771D5E92GXUXX5Z0ETYNGB8C1.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreGraphics"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreImage.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreImage-A8ECU5J86VS20Y5V2ZWM3D0YU.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreImage-YC7HXDL970L18KULNSDCCM6V.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreImage"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreMedia.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreMedia-CR1M16KYRHQDQBG9F02YRHPNG.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreMedia-2G6M73QI9WTJT1HSRQ8ADKUL6.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreMedia"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreServices.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreServices-91ADUXC4EMQUTF4AE9DJCPZ32.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreServices-ETOCR88K40BJ669D8OHBVEYGL.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreServices"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreText.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreText-DW70I36H78J87RI592CGWYW3N.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreText-C8FLY8LZG4GU77NRZ97M839S4.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreText"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreTransferable.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreTransferable-9AENQR4VFZ18NRWBLGKLSI6O2.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreTransferable-6FLHOG93KRVUZFR784D49EDX.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreTransferable"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreVideo.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreVideo-H6CV3OD5JA7JK68BJDYLPLK9.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/CoreVideo-7ZF3PKMC1JX1LVC1B661J06MP.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreVideo"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/Darwin.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Darwin-DHUY9OWQMEVRHDT61I3R5RY84.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Darwin-D76AA45VW06L5NZD9E140IE9X.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Darwin"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/DataDetection.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/DataDetection-BI4UAMG0KZ8M5ZDYATOAW4RW2.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/DataDetection-AK02GE6ZAVJ2UV13I7I9Y2AVE.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "DataDetection"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/DeveloperToolsSupport.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/DeveloperToolsSupport-4B2WLRDISLXBU2F7AZ9R9P021.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/DeveloperToolsSupport-8ZJ26O6SJOT0DK2SRP8Z9DLEV.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "DeveloperToolsSupport"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/DiskArbitration.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/DiskArbitration-BGHRA0GSXB3FLW97XOMDMGK24.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/DiskArbitration-50L76W1Y410SKVRCJFHOW9TXG.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "DiskArbitration"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/dispatch.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Dispatch-17UH4DUCGYZMB9E2E99IXAJ72.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Dispatch-7OVTNBBPI26C4MA43YS5N296J.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Dispatch"
   },
   {
     "clangModuleMapPath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Products\/Debug\/FirebaseCore\/FirebaseCore.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/FirebaseCore-42WGN55ILWP00PVCMXJN1HWEB.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/FirebaseCore-AA2UJ8EGPM19AL6C9XYITLBBW.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "FirebaseCore"
   },
   {
+    "clangModuleMapPath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Products\/Debug\/FirebaseCoreExtension\/FirebaseCoreExtension.framework\/Modules\/module.modulemap",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/FirebaseCoreExtension-A4QTE6PI2IFF1L66J5CPX7W9L.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "FirebaseCoreExtension"
+  },
+  {
+    "clangModuleMapPath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Products\/Debug\/FirebaseFirestore\/FirebaseFirestore.framework\/Modules\/module.modulemap",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/FirebaseFirestore-32OHGM1N00YZ9CAIQJS87R9ZH.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "FirebaseFirestore"
+  },
+  {
+    "clangModuleMapPath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Products\/Debug\/FirebaseFirestoreInternal\/FirebaseFirestoreInternal.framework\/Modules\/module.modulemap",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/FirebaseFirestoreInternal-9EWYCOL1DVT44IG76WAUGHL05.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "FirebaseFirestoreInternal"
+  },
+  {
+    "clangModuleMapPath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Products\/Debug\/FirebaseSharedSwift\/FirebaseSharedSwift.framework\/Modules\/module.modulemap",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/FirebaseSharedSwift-96ZOWWVSPSMDDK53UW71QYIVG.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "FirebaseSharedSwift"
+  },
+  {
     "clangModuleMapPath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Products\/Debug\/FlutterMacOS.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/FlutterMacOS-A0G9KPISI1LGHEZ04QMXBYZ38.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/FlutterMacOS-DGL7DTTUT3QVWWC14S5L6GW4T.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "FlutterMacOS"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/Foundation.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Foundation-D591JDF1V8CDJ6D91B181O8LM.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Foundation-1VNQBKPSCI2UQZM0GG1DC3BER.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Foundation"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/IOKit.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/IOKit-9J5ZFEW0C1QQ1IAP5EWN943DY.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/IOKit-DEEJLYUOOXV2MKUDETWQXM6S4.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "IOKit"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/IOSurface.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/IOSurface-1WKRVLTQH9HGVZJG9BV71Z680.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/IOSurface-8GXCPBGT6JPBG09UHF5PY2MVX.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "IOSurface"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/ImageIO.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/ImageIO-226CY8CN4NOFQS61VANHOID6D.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/ImageIO-3JOLJED6Q05ZKUPLKJKDZWVP1.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ImageIO"
   },
   {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/LocalAuthentication.framework\/Modules\/module.modulemap",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/LocalAuthentication-43JV5GAOPJW7CCU72KEFKNY56.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "LocalAuthentication"
+  },
+  {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinBasic.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/MachO-67DYRMX9ZTJZ64JPAI4X3G4S8.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/MachO-3HSSBPM1M1OFHDGYBZG2BZ53J.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "MachO"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/Metal.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Metal-B1TQJJNOPVSW05UD7VXCGTJCF.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Metal-3HYZ8WN1BT074KO0RXT5769PB.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Metal"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/OSLog.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/OSLog-CJKPALUKZB4JWS86ZQ9GVSU7T.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/OSLog-7DH2TMD5UKL9TRTQX6M5E86ZV.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "OSLog"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/ObjectiveC.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/ObjectiveC-4LEM8I6Y4A5V7X561KX0T1XN2.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/ObjectiveC-30GNID82EVEKD2173MA1ZJD05.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ObjectiveC"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/OpenGL.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/OpenGL-IXLDBTGEQ17GREB1CSDC30YA.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/OpenGL-7LJSLT2PRQEKLTDWV6JP78ZOP.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "OpenGL"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/QuartzCore.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/QuartzCore-4S6CD84HBXVQVQ7J2V9ZYTZNY.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/QuartzCore-3SA03TSZ2GQJ1H41P8PHN3IF0.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "QuartzCore"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/Security.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Security-BNZFSJAELCHZKZ1F2JLHQYE1I.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Security-AL7FWGUQLPRVY3MH9HZJYI0VS.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Security"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/Spatial\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Spatial-C9T5DSVADNGKLZ4JBY0RDFO4Q.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Spatial-9V4FRQA0EKMSWVUQR1FU0G7V9.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Spatial"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/lib\/swift\/shims\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/SwiftShims-BTR9K01GOV7RI89WIFNZ692KM.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/SwiftShims-BFROD1CTL2DGY9WEF4T9X1E7X.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "SwiftShims"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/SwiftUI.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/SwiftUI-1BEWUY1RJJ0SEWJ8VNFOIBYEQ.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/SwiftUI-7WS3W1E58HLY9WF6NP9SIZTAQ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "SwiftUI"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/SwiftUICore.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/SwiftUICore-65HXAGYTBY5AXM4FFYNINAOLR.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/SwiftUICore-9QLHNG2L7AU3Y5BVJ3PR3A3NJ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "SwiftUICore"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/Symbols.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Symbols-EP9LL253J5PT6P5O60BA03CMM.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/Symbols-3QJACOVVKZXIPHHXXH8T3KGEN.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Symbols"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/UniformTypeIdentifiers.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/UniformTypeIdentifiers-5A17SK17I83YC6NL7UGBJFDWW.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/UniformTypeIdentifiers-A2JIWDKXK55I715RQ1NV4F7M6.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "UniformTypeIdentifiers"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/xpc.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/XPC-76RHDZ5MKUPB1XJ1PBA7XHO9J.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/XPC-ENQYAWFM4FYVREQKEQTG7DCY7.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "XPC"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinFoundation1.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_AvailabilityInternal-6UM9AOVP9WS0DFEX6NSG6TRB8.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_AvailabilityInternal-9L54HRAQK5XYN63KL127OTYWF.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_AvailabilityInternal"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_float-5AYC72KE1S5523W2KNP9KN59R.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_float-BD4D6181SDJLM9AHISE30RPRR.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_float"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_intrinsics-Q3TU9S6IHY90KNLU0OEF7SRZ.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_intrinsics-94VNPPVFAIJRO4SAGHX5X705R.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_intrinsics"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_inttypes-F3LTXKG58XSN9IDBESYNF2QPA.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_inttypes-21GGD366CXFXHU20IGWGMJJ92.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_inttypes"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_limits-BQOUZ4DSIPM0126PH20LGSH29.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_limits-1B4QWJND7QOSFMBCASU72LHL9.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_limits"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_stdarg-CBYG0LV1PTDQK1BKWSKW0J7UI.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_stdarg-5YF3JWM0WCZNZZMGT8UBWMURC.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdarg"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_stdatomic-48KGNBY7ZRFWK4FOB7PGP75T7.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_stdatomic-5I8R57BTVXMJKUSBP2WKTQQEX.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdatomic"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_stdbool-7ETJMBL2XW5M8QH4N8FFD94RK.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_stdbool-BUFDAR7CX2AXQNSSWZE5QV49W.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdbool"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_stddef-CIYHTN8QV25P6Q3F12QR925IK.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_stddef-9P1RRCCL9SRSWQEPH5AEB5V2W.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stddef"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_stdint-29QLHJRUN0IW99INEKQT48DEZ.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_stdint-76EFQO6VYI6FUTXKMP8PLU4M8.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdint"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_tgmath-37627K5EGG7MDUUV8UGISYDWS.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_Builtin_tgmath-F3EYBL5UDTVFC6CJ6MFWJHXZ5.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_tgmath"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinFoundation1.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_DarwinFoundation1-A235B8304W26DR2RFHM7718SF.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_DarwinFoundation1-CEN7LEVFPFZNLAL7M6ZBG1D2A.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_DarwinFoundation1"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinFoundation2.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_DarwinFoundation2-CCVKA6TCGTI9OBYXLB7QPWN2U.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_DarwinFoundation2-88DMRUJM3VCPSMMRI5ZCIVQNP.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_DarwinFoundation2"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinFoundation3.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_DarwinFoundation3-DX084M75PG6VT43X2QCNTU0SL.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_DarwinFoundation3-55R7PAMTTHGJNGOOJRJTPN4A2.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_DarwinFoundation3"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/lib\/swift\/shims\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_SwiftConcurrencyShims-8YEAQUXV3LHXETZDG48B8CSOL.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/_SwiftConcurrencyShims-DYDXQ6Q7QX1E8X08MIQMOS9GE.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_SwiftConcurrencyShims"
   },
   {
+    "clangModuleMapPath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Products\/Debug\/cloud_firestore\/cloud_firestore.framework\/Modules\/module.modulemap",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/cloud_firestore-3HBN6DEHR431LX5UQESNB75FI.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "cloud_firestore"
+  },
+  {
     "clangModuleMapPath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Products\/Debug\/file_selector_macos\/file_selector_macos.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/file_selector_macos-88BWT403X998TQ6DMT87XG4N4.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/file_selector_macos-EFOGQBPAW8TJDFQ7SHF4Z9IZJ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "file_selector_macos"
   },
   {
+    "clangModuleMapPath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Products\/Debug\/firebase_auth\/firebase_auth.framework\/Modules\/module.modulemap",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/firebase_auth-5V4O0UHZIDPW8J7D4GG0G41J5.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "firebase_auth"
+  },
+  {
     "clangModuleMapPath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Products\/Debug\/firebase_core\/firebase_core.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/firebase_core-7B9V2OONSU2NM96O0FJ9N1I4A.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/firebase_core-7GVUTKXK7B51TBJ0NRBA79NWW.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "firebase_core"
   },
   {
     "clangModuleMapPath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Products\/Debug\/flutter_secure_storage_macos\/flutter_secure_storage_macos.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/flutter_secure_storage_macos-6BJZWKQ6LU0CZOF0BVDOUD8OB.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/flutter_secure_storage_macos-DBI1RSYAHRGU7TJZX6PI7NORO.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "flutter_secure_storage_macos"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/launch.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/launch-CDP2ODVBU2QECLG0SO8RW3B7F.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/launch-9CRY0AXI6ILIKON2PTHXF5J2H.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "launch"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/libDER\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/libDER-BYBG5OSF6SIR2J4KM9PWXM8M9.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/libDER-4OQ8S4Y6D2Y4EUUZQI2TV1XXV.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "libDER"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/libkern.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/libkern-CZGXA1QW4GHF00D1QJGDR4S34.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/libkern-BS3QPEUIO1XW71ZYAPMK2M776.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "libkern"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/os.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/os-CIUHRY5L11A4GYVPH7NLJFCB1.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/os-BWY2GQKFM7GHEB4TJ38UZR231.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "os"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/os.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/os_object-DX6N5UITKNVKHN1CLQGKJFBJZ.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/os_object-6MNJSRP2G1B6VEYYNRIHKKHHA.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "os_object"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/os.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/os_workgroup-3946CF6GJPVP39GKPEBR2QT8P.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/os_workgroup-4JVAFBSAMABLI74VSUESWJFUH.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "os_workgroup"
   },
   {
     "clangModuleMapPath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Products\/Debug\/path_provider_foundation\/path_provider_foundation.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/path_provider_foundation-BWA6DRWFDPQPRDIFRL3Q0OTW3.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/path_provider_foundation-EHW8MS898DTJ1UZI2HUCQUJDR.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "path_provider_foundation"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/ptrauth-6DV6KCX15E54AM3GR6R5K16ZK.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/ptrauth-C6CG8LNQ8D9C1JZF7W3DB5GI2.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ptrauth"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/ptrcheck-ATL4Q8MX540R1F5VP50U8K6MF.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/ptrcheck-27H1EQ42DKEI4ZUKVK71HM3B7.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ptrcheck"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/simd\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/simd-1QXBWB5FHHUZWQDWNYN137FXP.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/simd-AQ593ZOCZVF9V1UPU9M5RPWCB.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "simd"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinFoundation2.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/sys_types-2PEVZIDEPOH57JKLKNVN7QOVB.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/sys_types-5E5JZJB991866PXX2P49KYQUI.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "sys_types"

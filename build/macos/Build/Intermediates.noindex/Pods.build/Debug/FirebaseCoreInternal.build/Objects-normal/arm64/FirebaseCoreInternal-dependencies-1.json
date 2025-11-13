@@ -335,7 +335,7 @@
   },
   {
     "clangModuleMapPath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Products\/Debug\/GoogleUtilities\/GoogleUtilities.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/GoogleUtilities-489N849Y7DPF68BW94QXNIS74.pcm",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/Build\/Intermediates.noindex\/SwiftExplicitPrecompiledModules\/GoogleUtilities-BPBAKJ5UHQWWWTG8T77I5WM6N.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "GoogleUtilities"
@@ -430,6 +430,13 @@
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Symbols"
+  },
+  {
+    "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/SystemConfiguration.framework\/Modules\/module.modulemap",
+    "clangModulePath" : "\/Users\/nurainsyafiqah\/gommold\/gommold_frontend\/build\/macos\/ModuleCache.noindex\/SystemConfiguration-96JO4MH88WZ53BKHFHWCXU05I.pcm",
+    "isBridgingHeaderDependency" : false,
+    "isFramework" : false,
+    "moduleName" : "SystemConfiguration"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/UniformTypeIdentifiers.framework\/Modules\/module.modulemap",

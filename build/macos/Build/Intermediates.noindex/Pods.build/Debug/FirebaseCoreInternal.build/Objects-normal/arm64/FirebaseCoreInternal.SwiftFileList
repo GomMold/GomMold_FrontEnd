@@ -1,5 +1,7 @@
 /Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/_ObjC_HeartbeatController.swift
 /Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/_ObjC_HeartbeatsPayload.swift
+/Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/Utilities/AtomicBox.swift
+/Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/Utilities/FIRAllocatedUnfairLock.swift
 /Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/Heartbeat.swift
 /Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatController.swift
 /Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatLoggingTestUtils.swift
@@ -9,5 +11,4 @@
 /Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/RingBuffer.swift
 /Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/Storage.swift
 /Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/StorageFactory.swift
-/Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/Utilities/UnfairLock.swift
 /Users/nurainsyafiqah/gommold/gommold_frontend/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/WeakContainer.swift

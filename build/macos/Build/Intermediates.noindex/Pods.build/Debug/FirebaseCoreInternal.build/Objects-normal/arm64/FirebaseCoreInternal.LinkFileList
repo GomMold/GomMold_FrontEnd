@@ -2,6 +2,8 @@
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/FirebaseCoreInternal-dummy.o
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/_ObjC_HeartbeatController.o
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/_ObjC_HeartbeatsPayload.o
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/AtomicBox.o
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/FIRAllocatedUnfairLock.o
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/Heartbeat.o
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/HeartbeatController.o
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/HeartbeatLoggingTestUtils.o
@@ -11,5 +13,4 @@
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/RingBuffer.o
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/Storage.o
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/StorageFactory.o
-/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/UnfairLock.o
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCoreInternal.build/Objects-normal/arm64/WeakContainer.o

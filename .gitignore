@@ -115,3 +115,4 @@ ios/Runner/GoogleService-Info.plist
 
 google-services.json
 GoogleService-Info.plist
+assets/.env
