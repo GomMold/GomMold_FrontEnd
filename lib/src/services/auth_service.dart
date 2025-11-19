@@ -1,94 +1,46 @@
-/*import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-
-class AuthService {
-  final _storage = const FlutterSecureStorage();
-  final _baseUrl = dotenv.env['BACKEND_BASE'] ?? '';
-
-  // Sign up user
-  Future<bool> signUp(String email, String password) async {
-    final url = Uri.parse('$_baseUrl/signup');
-    final response = await http.post(url, body: {
-      'email': email,
-      'password': password,
-    });
-
-    return response.statusCode == 200;
-  }  
-}
-  // Login user
-  Future<bool> login(String email, String password) async {
-    final url = Uri.parse('$_baseUrl/login');
-    final response = await http.post(url, body: {
-      'email': email,
-      'password': password,
-    });
-
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      await _storage.write(key: 'token', value: data['token']);
-      return true;
-    }
-    return false;
-  }
-
-  // Get stored token
-  Future<String?> getToken() async {
-    return await _storage.read(key: 'token');
-  }
-
-  // Logout
-  Future<void> logout() async {
-    await _storage.delete(key: 'token');
-  }
-}*/
-
 import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService {
-  final _storage = const FlutterSecureStorage();
-  final _baseUrl = dotenv.env['BACKEND_BASE'] ?? '';
+  static const String _tokenKey = "auth_token";
+  static const String _userKey = "auth_user";
 
-  // Sign up user
-  Future<bool> signUp(String email, String password) async {
-    final url = Uri.parse('$_baseUrl/signup');
-    final response = await http.post(url, body: {
-      'email': email,
-      'password': password,
-    });
-
-    return response.statusCode == 200;
+  // Save token
+  Future<void> saveToken(String token) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_tokenKey, token);
   }
 
-  // Login user
-  Future<bool> login(String email, String password) async {
-    final url = Uri.parse('$_baseUrl/login');
-    final response = await http.post(url, body: {
-      'email': email,
-      'password': password,
-    });
-
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      await _storage.write(key: 'token', value: data['token']);
-      return true;
-    }
-    return false;
-  }
-
-  // Get stored token
+  // Get token
   Future<String?> getToken() async {
-    return await _storage.read(key: 'token');
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_tokenKey);
   }
 
-  // Logout
-  Future<void> logout() async {
-    await _storage.delete(key: 'token');
+  // Save user info (map)
+  Future<void> saveUser(Map<String, dynamic> user) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_userKey, jsonEncode(user));
+  }
+
+  // Retrieve current user (nullable)
+  Future<Map<String, dynamic>?> getCurrentUser() async {
+    final prefs = await SharedPreferences.getInstance();
+    final s = prefs.getString(_userKey);
+    if (s == null) return null;
+    return Map<String, dynamic>.from(jsonDecode(s));
+  }
+
+  // Delete token and user (logout)
+  Future<void> deleteToken() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove(_tokenKey);
+    await prefs.remove(_userKey);
+  }
+
+  // Check if user is logged in
+  Future<bool> isLoggedIn() async {
+    final token = await getToken();
+    return token != null && token.isNotEmpty;
   }
 }
-

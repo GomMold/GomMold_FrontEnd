@@ -28,3 +28,21 @@ void main() {
     expect(find.text('1'), findsOneWidget);
   });
 }
+
+/*import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:gommold_frontend/main.dart';
+
+void main() {
+  testWidgets('App shows SplashPage', (WidgetTester tester) async {
+    // Build the app
+    await tester.pumpWidget(const MyApp());
+
+    // Wait for FutureBuilder and animations
+    await tester.pumpAndSettle();
+
+    // Verify that SplashPage is displayed
+    expect(find.text('GomMold'), findsOneWidget);
+  });
+}*/
+

@@ -9,6 +9,7 @@
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/FirebaseFirestore/FirebaseFirestore.framework
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/FirebaseFirestoreInternal/FirebaseFirestoreInternal.framework
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/FirebaseSharedSwift/FirebaseSharedSwift.framework
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/FirebaseStorage/FirebaseStorage.framework
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/GTMSessionFetcher/GTMSessionFetcher.framework
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/GoogleUtilities/GoogleUtilities.framework
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/abseil/absl.framework
@@ -19,3 +20,4 @@
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/leveldb-library/leveldb.framework
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/nanopb/nanopb.framework
 /Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/path_provider_foundation/path_provider_foundation.framework
+/Users/nurainsyafiqah/gommold/gommold_frontend/build/macos/Build/Products/Debug/shared_preferences_foundation/shared_preferences_foundation.framework

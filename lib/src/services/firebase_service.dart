@@ -1,24 +1,45 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:typed_data';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirebaseService {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseStorage _storage = FirebaseStorage.instance;
+  final FirebaseFirestore _db = FirebaseFirestore.instance;
 
-  // Get current user
-  User? get currentUser => _auth.currentUser;
+  // -------------------------
+  //  UPLOAD IMAGE
+  // -------------------------
+  Future<String> uploadImage(
+      String folder, String fileName, Uint8List bytes) async {
+    try {
+      final ref = _storage.ref().child('$folder/$fileName');
 
-  // Sign out
-  Future<void> signOut() async => await _auth.signOut();
+      await ref.putData(
+        bytes,
+        SettableMetadata(contentType: 'image/jpeg'),
+      );
 
-  // Example: Add detection record
-  Future<void> addDetection(Map<String, dynamic> data) async {
-    if (currentUser != null) {
-      await _firestore
-          .collection('users')
-          .doc(currentUser!.uid)
-          .collection('detections')
-          .add(data);
+      final url = await ref.getDownloadURL();
+      return url;
+    } catch (e) {
+      print("Upload error: $e");
+      return "";
+    }
+  }
+
+  // -------------------------
+  //  GET IMAGES FROM FIRESTORE
+  // -------------------------
+  Future<List<Map<String, dynamic>>> getDetections() async {
+    try {
+      final snapshot = await _db.collection('detections').get();
+
+      return snapshot.docs
+          .map((doc) => doc.data() as Map<String, dynamic>)
+          .toList();
+    } catch (e) {
+      print("Error fetching detections: $e");
+      return [];
     }
   }
 }
