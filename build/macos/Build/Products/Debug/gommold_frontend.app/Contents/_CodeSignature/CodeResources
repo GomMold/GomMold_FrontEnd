@@ -27,10 +27,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			zORypMs/XwvW/YFXt6PLHIJ4yeg=
+			4uOImchS16TZwZzKY4Irc4EBeO0=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"cce472a4cb3f5f0bd6fd8157b7a3cb1c8278c9e8"</string>
+			<string>cdhash H"e2e38899c852d7a4d9c19cca63822b73810178ed"</string>
 		</dict>
 		<key>Frameworks/FirebaseAppCheckInterop.framework</key>
 		<dict>

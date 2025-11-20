@@ -21,7 +21,7 @@ class LoadingPage extends StatelessWidget {
                     color: Colors.white.withOpacity(0.62),
                     borderRadius: BorderRadius.circular(12),
                     image: DecorationImage(
-                      image: AssetImage("assets/images/initial.png"), // replace with your actual image
+                      image: AssetImage("assets/images/Loading_page.png"), // replace with your actual image
                       fit: BoxFit.contain,
                     ),
                   ),

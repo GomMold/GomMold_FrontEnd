@@ -144,7 +144,6 @@ class ApiService {
 }
 
 // helper: lookupMimeType requires package:mime; but to avoid adding libs here we create a simple function.
-// If you want more accurate detection add `mime` package and use lookupMimeType from it.
 String? lookupMimeType(String path) {
   final ext = path.split('.').last.toLowerCase();
   switch (ext) {

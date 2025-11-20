@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import '../services/api_service.dart';
 import '../services/auth_service.dart';
 
@@ -301,4 +301,218 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+}*/
+
+import 'package:flutter/material.dart';
+import '../services/api_service.dart';
+import '../services/auth_service.dart';
+
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
 }
+
+class _LoginPageState extends State<LoginPage> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  final ApiService _apiService = ApiService();
+  final AuthService _authService = AuthService();
+
+  bool _isLoading = false;
+  String? errorText; // Figma-style inline error
+
+  void _login() async {
+    setState(() {
+      _isLoading = true;
+      errorText = null;
+    });
+
+    final email = _emailController.text.trim();
+    final password = _passwordController.text.trim();
+
+    if (email.isEmpty || password.isEmpty) {
+      setState(() {
+        _isLoading = false;
+        errorText = "Please fill in all fields";
+      });
+      return;
+    }
+
+    final res = await _apiService.login(email, password);
+
+    setState(() => _isLoading = false);
+
+    final body = res["body"];
+
+    if (body["success"] == true) {
+      // Save token
+      final token = body["data"]["token"];
+      await _authService.saveToken(token);
+
+      // Navigate to home page
+      Navigator.pushReplacementNamed(context, "/homepage");
+    } else {
+      setState(() {
+        errorText = body["error"] ?? "Invalid email or password.";
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 40),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              
+              Center(
+                child: Image.asset(
+                  "assets/images/sign_up_page.png",
+                  width: 250,
+                  height: 65,
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              const Center(
+                child: Text(
+                  'AI- Driven Mold Detection',
+                  style: TextStyle(
+                    color: Color(0xFF253E05),
+                    fontSize: 14,
+                    fontFamily: 'Inter',
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 35),
+
+              const Text(
+                "Log In",
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 20,
+                ),
+              ),
+
+              const SizedBox(height: 8),
+
+              const Text(
+                "Enter your credentials to access GomMold",
+                style: TextStyle(
+                  fontSize: 13,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+
+              const SizedBox(height: 30),
+
+              const Text("Email", style: TextStyle(fontWeight: FontWeight.w700)),
+              const SizedBox(height: 8),
+              TextField(
+                controller: _emailController,
+                decoration: _inputDeco(),
+              ),
+
+              const SizedBox(height: 20),
+
+              const Text("Password", style: TextStyle(fontWeight: FontWeight.w700)),
+              const SizedBox(height: 8),
+              TextField(
+                controller: _passwordController,
+                obscureText: true,
+                decoration: _inputDeco(),
+              ),
+
+              if (errorText != null) ...[
+                const SizedBox(height: 8),
+                Text(
+                  errorText!,
+                  style: const TextStyle(
+                    color: Colors.red,
+                    fontSize: 13,
+                  ),
+                ),
+              ],
+
+              const SizedBox(height: 30),
+
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: _isLoading ? null : _login,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF94A281),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: _isLoading
+                      ? const CircularProgressIndicator(color: Colors.white)
+                      : const Text(
+                          "Log In",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16,
+                          ),
+                        ),
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("Don’t have an account? "),
+                  GestureDetector(
+                    onTap: () => Navigator.pushReplacementNamed(context, "/signup"),
+                    child: const Text(
+                      "Sign Up",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 25),
+
+              Center(
+                child: Text(
+                  "Copyright © 2025 Gom.Inc. All rights reserved.",
+                  style: TextStyle(color: Colors.grey[700], fontSize: 12),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  InputDecoration _inputDeco() {
+    return InputDecoration(
+      filled: true,
+      fillColor: const Color(0xFFF5F5F5),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+    );
+  }
+}
+
+
+
+
