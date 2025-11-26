@@ -1,71 +1,51 @@
 import 'package:flutter/material.dart';
-import '../services/api_service.dart';
-import '../services/auth_service.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
+  final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
   bool _isLoading = false;
-
-  final ApiService _apiService = ApiService();
-  final AuthService _authService = AuthService();
 
   @override
   void dispose() {
     _emailController.dispose();
+    _usernameController.dispose();
     _passwordController.dispose();
     super.dispose();
   }
 
   bool _isValidEmail(String email) {
-    final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+$');
+    final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+\$');
     return emailRegex.hasMatch(email);
   }
 
-  Future<void> _handleLogin() async {
-    if (!_formKey.currentState!.validate()) return;
+  void _handleSignUp() {
+    if (!_formKey.currentState!.validate()) {
+      return;
+    }
 
     setState(() => _isLoading = true);
 
-    final email = _emailController.text.trim();
-    final password = _passwordController.text.trim();
-
-    final resp = await _apiService.login(email, password);
-
-    setState(() => _isLoading = false);
-
-    if (!mounted) return;
-
-    if (resp['statusCode'] == 200) {
-      final token = resp['body']['data']['token'];
-      final user = resp['body']['data']['user'];
-
-      // Save token + user
-      await _authService.saveToken(token);
-      await _authService.saveUser(user);
-
-      // Navigate to homepage
-      Navigator.pushReplacementNamed(context, '/home');
-    } else {
-      // Show backend error message
-      final message = resp['body']['message'] ?? "Login failed. Try again.";
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(message)),
-      );
-    }
+    // Simulate API call
+    Future.delayed(const Duration(seconds: 2), () {
+      if (mounted) {
+        setState(() => _isLoading = false);
+        // Navigate to home page
+        Navigator.pushReplacementNamed(context, '/home');
+      }
+    });
   }
 
-  void _navigateToSignup() {
-    Navigator.pushNamed(context, '/signup');
+  void _navigateToLogin() {
+    Navigator.pushNamed(context, '/login');
   }
 
   @override
@@ -78,79 +58,75 @@ class _LoginPageState extends State<LoginPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 40),
-
-              // LOGO SECTION
+              // Logo and tagline section
               Center(
-              child: Column(
-              children: [
-              Image.asset(
-              'assets/images/logo.png',
-              width: 260,            
-              fit: BoxFit.contain,   
-              ),
-
-              const SizedBox(height: 20), 
-
-              const Text(
-              'AI- Driven Mold Detection',
-              style: TextStyle(
-                  fontFamily: 'Inter',
-                  fontSize: 13,        
-                  color: Color(0xFF253F05),
+                child: Column(
+                  children: [
+                    Image.asset(
+                      'assets/images/logo.png',
+                      width: 260,
+                      fit: BoxFit.contain,
+                    ),
+                    const SizedBox(height: 20),
+                    const Text(
+                      'AI- Driven Mold Detection',
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 13,
+                        fontWeight: FontWeight.normal,
+                        color: Color(0xFF253F05),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
-        ),
-
-              const SizedBox(height: 60),
-
-              // TITLE
+              const SizedBox(height: 40),
+              // Sign Up title
               const Text(
-                'Log In',
+                'Sign Up',
                 style: TextStyle(
                   fontFamily: 'Inter',
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
+                  color: Colors.black,
                 ),
               ),
               const SizedBox(height: 4),
-
+              // Subtitle
               const Text(
-                'Enter your credentials to access GomMold',
+                'Create your GomMold account',
                 style: TextStyle(
                   fontFamily: 'Inter',
                   fontSize: 13,
                   fontStyle: FontStyle.italic,
+                  color: Colors.black,
                 ),
               ),
-
               const SizedBox(height: 32),
-
-              // FORM
+              // Form
               Form(
                 key: _formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // EMAIL FIELD
+                    // Email field
                     const Text(
                       'Email',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
                     ),
                     const SizedBox(height: 8),
-
                     TextFormField(
                       controller: _emailController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: 'Enter your email',
                         filled: true,
-                        fillColor: const Color.fromARGB(41, 130, 130, 130),
+                        fillColor: Color.fromARGB(41, 130, 130, 130),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide.none,
@@ -170,27 +146,62 @@ class _LoginPageState extends State<LoginPage> {
                         return null;
                       },
                     ),
-
                     const SizedBox(height: 24),
-
-                    // PASSWORD FIELD
+                    // Username field
+                    const Text(
+                      'Username',
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    TextFormField(
+                      controller: _usernameController,
+                      decoration: InputDecoration(
+                        hintText: 'Enter your username',
+                        filled: true,
+                        fillColor: Color.fromARGB(41, 130, 130, 130),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide.none,
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 12,
+                        ),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Username is required';
+                        }
+                        if (value.length < 3) {
+                          return 'Username must be at least 3 characters';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 24),
+                    // Password field
                     const Text(
                       'Password',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
                     ),
                     const SizedBox(height: 8),
-
                     TextFormField(
                       controller: _passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
                         hintText: 'Enter your password',
                         filled: true,
-                        fillColor: const Color.fromARGB(41, 130, 130, 130),
+                        fillColor: Color.fromARGB(41, 130, 130, 130),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide.none,
@@ -213,13 +224,11 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
               ),
-
               const SizedBox(height: 40),
-
-              // LOGIN BUTTON
+              // Sign Up button
               Center(
                 child: GestureDetector(
-                  onTap: _isLoading ? null : _handleLogin,
+                  onTap: _isLoading ? null : _handleSignUp,
                   child: Container(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 48,
@@ -235,12 +244,13 @@ class _LoginPageState extends State<LoginPage> {
                             height: 20,
                             child: CircularProgressIndicator(
                               strokeWidth: 2,
-                              valueColor:
-                                  AlwaysStoppedAnimation<Color>(Colors.white),
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                Colors.white,
+                              ),
                             ),
                           )
                         : const Text(
-                            'Log In',
+                            'Sign Up',
                             style: TextStyle(
                               fontFamily: 'Inter',
                               fontSize: 16,
@@ -251,13 +261,11 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-
               const SizedBox(height: 24),
-
-              // SIGNUP LINK
+              // Log In link
               Center(
                 child: GestureDetector(
-                  onTap: _navigateToSignup,
+                  onTap: _navigateToLogin,
                   child: RichText(
                     text: const TextSpan(
                       style: TextStyle(
@@ -266,11 +274,13 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.black,
                       ),
                       children: [
-                        TextSpan(text: "Don't have an account? "),
                         TextSpan(
-                          text: 'Sign Up',
+                          text: 'Already had an account? ',
+                        ),
+                        TextSpan(
+                          text: 'Log In',
                           style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w800,
                             decoration: TextDecoration.underline,
                             fontStyle: FontStyle.italic,
                           ),
@@ -280,20 +290,6 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-
-              const SizedBox(height: 8),
-
-              Center(
-                child: Text(
-                  'New to GomMold? Sign up to start detecting mold',
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 10,
-                    color: Colors.black.withOpacity(0.7),
-                  ),
-                ),
-              ),
-
               const SizedBox(height: 40),
             ],
           ),

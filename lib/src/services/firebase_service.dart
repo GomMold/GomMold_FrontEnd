@@ -35,7 +35,7 @@ class FirebaseService {
       final snapshot = await _db.collection('detections').get();
 
       return snapshot.docs
-          .map((doc) => doc.data() as Map<String, dynamic>)
+          .map((doc) => doc.data())
           .toList();
     } catch (e) {
       print("Error fetching detections: $e");

@@ -1,116 +1,149 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 
 class InitialPage extends StatelessWidget {
   const InitialPage({super.key});
+
+  static const _logoAsset = 'assets/images/Initial page.png';
+  static const Color _pillColor = Color(0xFFA6B79A); // approximate
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Column(
-          children: [
+        child: SizedBox.expand(
+          child: Column(
+            children: [
+              const Spacer(flex: 3),
 
-            // ---------- TOP IMAGE SECTION ----------
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.62),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Stack(
-                    children: [
-                      // Replace this with your real asset image
-                      Positioned(
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        child: Container(
-                          height: 120,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              //image: NetworkImage(
-                                //"https://placehold.co/309x83", // replace later
-                                image: AssetImage(
-                                "assets/images/Initial_page.png",
-                                ),
-                              //),
-                              fit: BoxFit.contain,
-                            ),
-                          ),
-                        ),
-                      ),
+              // Logo (local asset)
+              Center(
+                child: Image.asset(
+                  _logoAsset,
+                  width: 280,
+                  height: 120,
+                  fit: BoxFit.contain,
+                ),
+              ),
 
-                      // ---------- GET STARTED TEXT ----------
-                      Positioned(
-                        bottom: 16,
-                        left: 0,
-                        right: 0,
-                        child: Center(
-                          child: GestureDetector(
-                            onTap: () {
-                              // TODO: Navigate to login/signup page
-                              Navigator.pushNamed(context, "/login");
-                            },
-                            child: Text(
-                              "Get started",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: "Inter",
-                              ),
-                            ),
-                          ),
+              const SizedBox(height: 20),
+
+              // Get Started pill
+              Center(
+                child: GestureDetector(
+                  onTap: () => Navigator.pushNamed(context, '/login'),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 34, vertical: 12),
+                    decoration: BoxDecoration(
+                      color: _pillColor,
+                      borderRadius: BorderRadius.circular(24),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.12),
+                          offset: const Offset(0, 6),
+                          blurRadius: 10,
                         ),
+                        BoxShadow(
+                          color: Colors.white.withOpacity(0.4),
+                          offset: const Offset(0, -2),
+                          blurRadius: 0,
+                        ),
+                      ],
+                    ),
+                    child: const Text(
+                      'Get started',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),
-            ),
 
-            const SizedBox(height: 40),
+              const Spacer(flex: 4),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}*/
 
-            // ---------- COPYRIGHT ----------
-            Padding(
-              padding: const EdgeInsets.only(bottom: 16),
-              child: Text(
-                'Copyright© 2025 Gom.Inc. All rights reserved.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Color(0xFF253E05),
-                  fontSize: 14,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w400,
+import 'package:flutter/material.dart';
+
+class InitialPage extends StatelessWidget {
+  const InitialPage({super.key});
+
+  static const String _logoAsset = 'assets/images/logo.png';
+  static const Color _pillColor = Color(0xFFA6B79A);
+
+  @override
+  Widget build(BuildContext context) {
+    // Screen width
+    final double screenWidth = MediaQuery.of(context).size.width;
+
+    // Limit max width to mobile size for desktop & web
+    final double contentWidth = screenWidth > 500 ? 430 : screenWidth;
+
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: contentWidth,
+          ),
+          child: SafeArea(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // Responsive logo
+                Image.asset(
+                  _logoAsset,
+                  width: contentWidth * 0.8,   // 80% of container width
+                  fit: BoxFit.contain,
                 ),
-              ),
-            ),
 
-            // ---------- BOTTOM HANDLE (IPHONE STYLE) ----------
-            Container(
-              height: 34,
-              alignment: Alignment.center,
-              child: Container(
-                width: 134,
-                height: 5,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(100),
+                const SizedBox(height: 40),
+
+                // Get Started button
+                GestureDetector(
+                  onTap: () {
+                     Navigator.pushNamed(context, '/login');
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 40, vertical: 16),
+                    decoration: BoxDecoration(
+                      color: _pillColor,
+                      borderRadius: BorderRadius.circular(30),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.15),
+                          blurRadius: 12,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: const Text(
+                      "Get started",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
   }
 }
-
-
-
 
 
