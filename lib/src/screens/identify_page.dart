@@ -1,22 +1,22 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-//import '../services/api_service.dart';
+import '../services/api_service.dart';
 
 class IdentifyPage extends StatefulWidget {
-  final String imagePath;        // file path OR network URL
-  final String title;
-  final String dateTime;
-  final String status;           // “MOLD DETECTED” / “NO MOLD DETECTED”
-  final double confidence;       // backend %
-  final String analysisId;       // used for updating
+  final String imagePath;       // local path or URL
+  final String analysisName;    // backend: analysis_name
+  final String timestamp;       // backend: timestamp (formatted string)
+  final String message;         // backend: "Mold detected" / "No mold detected"
+  final String status;          // backend: "warning" / "safe"
+  final String analysisId;      // firestore document ID
 
   const IdentifyPage({
     super.key,
     required this.imagePath,
-    required this.title,
-    required this.dateTime,
+    required this.analysisName,
+    required this.timestamp,
+    required this.message,
     required this.status,
-    required this.confidence,
     required this.analysisId,
   });
 
@@ -26,18 +26,23 @@ class IdentifyPage extends StatefulWidget {
 
 class _IdentifyPageState extends State<IdentifyPage> {
   late String editedTitle;
-  //bool _updating = false;
 
   @override
   void initState() {
     super.initState();
-    editedTitle = widget.title;
+    editedTitle = widget.analysisName;
   }
 
-  /// -----------------------------------------------------------------
-  /// EDIT TITLE POPUP → Save into backend
-  /// -----------------------------------------------------------------
-  void _renameAnalysis() {
+  // LOAD IMAGE (local or URL)
+  Widget _loadImage(String path) {
+    if (path.startsWith("http")) {
+      return Image.network(path, fit: BoxFit.cover);
+    }
+    return Image.file(File(path), fit: BoxFit.cover);
+  }
+
+  // POPUP FOR RENAMING ANALYSIS TITLE
+  void _renameTitlePopup() {
     final controller = TextEditingController(text: editedTitle);
 
     showDialog(
@@ -53,37 +58,61 @@ class _IdentifyPageState extends State<IdentifyPage> {
         ),
         actions: [
           TextButton(
-            child: const Text("Cancel"),
             onPressed: () => Navigator.pop(context),
+            child: const Text("Cancel"),
           ),
           TextButton(
-            child: const Text("Save"),
             onPressed: () async {
               Navigator.pop(context);
 
-              if (controller.text.trim().isEmpty) return;
+              final newName = controller.text.trim();
+              if (newName.isEmpty) return;
 
-              setState(() => editedTitle = controller.text.trim());
-              // TODO: call update endpoint when available
+              setState(() => editedTitle = newName);
+
+              /// 🔥 UPDATE TITLE IN BACKEND FIRESTORE
+              final result = await ApiService()
+                  .updateAnalysisTitle(widget.analysisId, newName);
+
+                  if (result.statusCode == 200) {
+                    Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/home',
+                  (route) => false,
+
+               /*if (result.statusCode == 200) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text("Title updated successfully")),*/
+            );
+          } else {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(result.message ?? "Failed to save title")),
+                );
+              }
             },
+            child: const Text("Save"),
           ),
         ],
       ),
     );
   }
 
-  Widget _loadImage(String path) {
-    if (path.startsWith("http")) {
-      return Image.network(path, fit: BoxFit.cover);
-    } else {
-      return Image.file(File(path), fit: BoxFit.cover);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    final Color borderColor = const Color(0xFFA6B79A);
-    final bool moldDetected = widget.status.toUpperCase().contains("DETECTED");
+    //@override
+
+  // 🔍 DEBUG PRINT — SEE WHICH VALUE IS NULL
+    print("DEBUG >>> imagePath = ${widget.imagePath}");
+    print("DEBUG >>> analysisName = ${widget.analysisName}");
+    print("DEBUG >>> timestamp = ${widget.timestamp}");
+    print("DEBUG >>> message = ${widget.message}");
+    print("DEBUG >>> status = ${widget.status}");
+    print("DEBUG >>> analysisId = ${widget.analysisId}");
+
+    const Color borderColor = Color(0xFFA6B79A);
+
+    // True if backend says "warning" → mold detected
+    final bool moldDetected = widget.status == "warning";
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -93,98 +122,99 @@ class _IdentifyPageState extends State<IdentifyPage> {
         leadingWidth: 120,
         leading: Padding(
           padding: const EdgeInsets.only(left: 12.0),
-          child: Image.asset('assets/images/logo.png', fit: BoxFit.contain),
+          child: Image.asset(
+            'assets/images/logo.png',
+            fit: BoxFit.contain,
+          ),
         ),
       ),
 
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             children: [
               const SizedBox(height: 8),
 
               const Text(
-                'Result Analysis',
+                "Result Analysis",
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
                 ),
               ),
 
               const SizedBox(height: 24),
 
-              /// IMAGE FRAME
+              // IMAGE
               Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(14),
-                  border: Border.all(color: borderColor, width: 4),
-                ),
-                clipBehavior: Clip.hardEdge,
                 height: 180,
                 width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(color: borderColor, width: 4),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                clipBehavior: Clip.hardEdge,
                 child: _loadImage(widget.imagePath),
               ),
 
               const SizedBox(height: 16),
 
-              /// TITLE & DATE ROW
+              // TITLE + TIMESTAMP
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      Text(
-                        editedTitle,
-                        style: const TextStyle(fontSize: 14),
-                      ),
-                      const SizedBox(width: 6),
-                      GestureDetector(
-                        onTap: _renameAnalysis,
-                        child: const Icon(Icons.edit, size: 16),
-                      ),
-                    ],
+                  GestureDetector(
+                    onTap: _renameTitlePopup,
+                    child: Row(
+                      children: [
+                        Text(
+                          editedTitle,
+                          style: const TextStyle(fontSize: 14),
+                        ),
+                        const SizedBox(width: 6),
+                        const Icon(Icons.edit, size: 16),
+                      ],
+                    ),
                   ),
-                  Text(widget.dateTime, style: const TextStyle(fontSize: 14)),
+                  Text(widget.timestamp, style: const TextStyle(fontSize: 14)),
                 ],
               ),
 
               const SizedBox(height: 30),
 
-              /// RESULT STATUS
+              // RESULT MESSAGE
               Text(
-                moldDetected ? "MOLD DETECTED" : "NO MOLD DETECTED",
+                widget.message.toUpperCase(),
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 22,
-                  color: moldDetected ? Colors.red : Colors.black87,
+                  color: moldDetected ? Colors.red : Colors.green,
                 ),
-              ),
-
-              const SizedBox(height: 8),
-
-              /// CONFIDENCE %
-              Text(
-                "Confidence: ${widget.confidence.toStringAsFixed(1)}%",
-                style: const TextStyle(fontSize: 16, color: Colors.black54),
               ),
 
               const SizedBox(height: 36),
 
-              /// SAVE BUTTON
+              // SAVE BUTTON → GO HOME
               ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/home',
+                    (route) => false,
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: borderColor,
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 40, vertical: 12),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
                   elevation: 6,
                 ),
-                onPressed: () => Navigator.pop(context),
                 child: const Text(
-                  'Save & Continue',
+                  "Save & Continue",
                   style: TextStyle(color: Colors.white),
                 ),
               ),

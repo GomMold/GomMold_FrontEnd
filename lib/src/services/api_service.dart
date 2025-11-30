@@ -34,7 +34,9 @@ class ResponseWrapper {
 class ApiService {
   final AuthService _auth = AuthService();
 
-  /// Helper: Default headers
+  /// ------------------------------------------------------------
+  /// HEADERS
+  /// ------------------------------------------------------------
   Future<Map<String, String>> _headers({bool auth = false}) async {
     final headers = {"Content-Type": "application/json"};
 
@@ -91,7 +93,7 @@ class ApiService {
   }
 
   /// ------------------------------------------------------------
-  /// MOLD DETECTION (UPLOAD)
+  /// MOLD DETECTION
   /// ------------------------------------------------------------
   Future<ResponseWrapper> detectMold(File imageFile, String analysisName) async {
     final url = Uri.parse(Constants.baseUrl + Constants.detectEndpoint);
@@ -125,17 +127,38 @@ class ApiService {
       return ResponseWrapper(statusCode: 500, message: e.toString());
     }
   }
+  // ------------------------------------------------------------
+  // GET HISTORY (FIXED)
+  // ------------------------------------------------------------
+  Future<ResponseWrapper> getHistory() async {
+  //final url = Uri.parse("${Constants.baseUrl}/api/history/");
+  final url = Uri.parse(Constants.baseUrl + Constants.historyEndpoint);
+
+  try {
+    final response = await http.get(
+      url,
+      headers: await _headers(auth: true),
+    );
+
+    return ResponseWrapper.fromHttp(response);
+  } catch (e) {
+    return ResponseWrapper(statusCode: 500, message: e.toString());
+  }
+}
 
   /// ------------------------------------------------------------
-  /// GET HISTORY
+  /// UPDATE ANALYSIS TITLE (FIXED)
   /// ------------------------------------------------------------
-  Future<ResponseWrapper> getHistory() async {
-    final url = Uri.parse(Constants.baseUrl + Constants.historyEndpoint);
+  Future<ResponseWrapper> updateAnalysisTitle(
+      String docId, String newTitle) async {
+    //final url = Uri.parse("${Constants.baseUrl}/api/history/$docId");
+    final url = Uri.parse("${Constants.baseUrl}${Constants.historyBase}/$docId");
 
     try {
-      final response = await http.get(
+      final response = await http.put(
         url,
         headers: await _headers(auth: true),
+        body: jsonEncode({"analysis_name": newTitle}),
       );
 
       return ResponseWrapper.fromHttp(response);

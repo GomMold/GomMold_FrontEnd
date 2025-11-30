@@ -54,19 +54,20 @@ class _ImagePageState extends State<ImagePage> {
   if (response.statusCode == 200 && response.data != null) {
     final data = response.data;
 
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => IdentifyPage(
-          imagePath: _selectedImage!.path,
-          title: data["analysis_name"] ?? "Untitled",
-          dateTime: data["created_at"] ?? "",
-          status: data["mold_status"] ?? "UNKNOWN",
-          confidence: double.tryParse(data["confidence"].toString()) ?? 0.0,
-          analysisId: data["id"].toString(),
-        ),
+   Navigator.push(
+   context,
+   MaterialPageRoute(
+    builder: (_) => IdentifyPage(
+      imagePath: _selectedImage!.path,
+      analysisName: data["analysis_name"] ?? "Untitled",
+      timestamp: data["timestamp"]?? "",
+      message: data["message"]?? "No message",
+      status: data["result"]?? "safe",
+      analysisId: data["id"]?? "",  // MUST MATCH FIREBASE DOC ID
       ),
-    );
+    ),
+  );
+
   } else {
     _showSnack(response.message ?? "Failed to analyze image");
   }
@@ -135,10 +136,17 @@ class _ImagePageState extends State<ImagePage> {
                 ),
                 clipBehavior: Clip.hardEdge,
                 child: _selectedImage == null
-                    ? Image.asset(
+                      ? Container(
+                       color: const Color(0xFFECEFE8),
+                       child: const Center(
+                       child: Icon(Icons.image_outlined,
+                       size: 60, color: Color(0xFF94A281)),
+                       ),
+                   )
+                    /*? Image.asset(
                         'assets/images/Image Page.png',
                         fit: BoxFit.cover,
-                      )
+                      )*/
                     : Image.file(
                         _selectedImage!,
                         fit: BoxFit.cover,
@@ -178,7 +186,7 @@ class _ImagePageState extends State<ImagePage> {
                 child: ElevatedButton(
                   onPressed: _isLoading ? null : _analyzeImage,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF253F05),
+                    backgroundColor: const Color(0xFF94A281),
                     padding: const EdgeInsets.symmetric(vertical: 16),
                   ),
                   child: _isLoading
@@ -188,6 +196,7 @@ class _ImagePageState extends State<ImagePage> {
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
+                            color: Colors.white,       
                           ),
                         ),
                 ),

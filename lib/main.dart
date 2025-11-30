@@ -10,6 +10,7 @@ import 'src/screens/homepage_time.dart';
 //import 'src/screens/identify_page.dart';
 import 'src/screens/image_page.dart';
 import 'src/screens/chatbot_page.dart';
+import 'src/screens/settings_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         //'/identify': (context) => const IdentifyPage(),
         '/image': (context) => const ImagePage(),
         '/chatbot': (context) => const ChatbotInterfacePage(),
+        '/settings': (context) => const SettingsPage(),
       },
     );
   }

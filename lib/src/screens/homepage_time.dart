@@ -10,7 +10,8 @@ class HomepageTime extends StatefulWidget {
 
 class _HomepageTimeState extends State<HomepageTime> {
   bool _isLoading = true;
-  List<Map<String, dynamic>> _history = [];
+  List<dynamic> _history = [];
+  //List<Map<String, dynamic>> _history = [];
 
   @override
   void initState() {
@@ -28,7 +29,8 @@ class _HomepageTimeState extends State<HomepageTime> {
 
     if (response.statusCode == 200 && response.data != null) {
       setState(() {
-        _history = List<Map<String, dynamic>>.from(response.data);
+        _history = response.data; 
+       // _history = List<Map<String, dynamic>>.from(response.data);
         _isLoading = false;
       });
     } else {
@@ -41,41 +43,75 @@ class _HomepageTimeState extends State<HomepageTime> {
   /// HISTORY ITEM UI
   /// ---------------------------------------------------------
   Widget _buildHistoryItem(int index) {
-    final item = _history[index];
+  final item = _history[index];
+  final isMold = item["result"] == "warning";
 
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
-      decoration: BoxDecoration(
-        color: const Color.fromARGB(84, 148, 162, 129),
-        borderRadius: BorderRadius.circular(15),
+  return Container(
+    padding: const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      color: const Color.fromARGB(84, 148, 162, 129),
+      borderRadius: BorderRadius.circular(15),
+    ),
+    child: Row(
+      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+         // IMAGE
+    if (item["image_url"] != null && item["image_url"] != "")
+      ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: Image.network(
+          item["image_url"],
+          width: 70,
+          height: 70,
+          fit: BoxFit.cover,
+        ),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            child: Text(
-              '${index + 1}. ${item["title"]}',
-              style: const TextStyle(
-                fontFamily: 'Inter',
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-                color: Colors.black,
+
+    const SizedBox(width: 14),
+
+    //text section
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '${index + 1}. ${item["analysis_name"] ?? "Untitled"}',
+                style: const TextStyle(
+                  fontFamily: 'Inter',
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
+                ),
               ),
-            ),
+
+              const SizedBox(height: 4),
+
+              Text(
+                item["message"] ?? "",
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold,
+                  color: isMold ? Colors.red : Colors.green,
+                ),
+              ),
+            ],
           ),
-          Text(
-            item["created_at"] ?? "",
-            style: const TextStyle(
-              fontFamily: 'Inter',
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: Colors.black,
-            ),
+        ),
+
+        Text(
+          item["timestamp"] ?? "",
+          style: const TextStyle(
+            fontFamily: 'Inter',
+            fontSize: 13,
+            fontWeight: FontWeight.w500,
+            color: Colors.black,
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
+}
+
 
   /// ---------------------------------------------------------
   /// BUILD UI
@@ -180,11 +216,20 @@ class _HomepageTimeState extends State<HomepageTime> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
+              onPressed: () => Navigator.pushNamed(context, '/chatbot'),
+              icon: Image.asset(
+              'assets/images/chatbot_icon.png',
+               width: 33,
+               height: 33,
+               ),
+            ),
+
+            /*IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/chatbot');
               },
               icon: const Icon(Icons.chat_bubble_outline, size: 28),
-            ),
+            ),*/
             Container(
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.black12, width: 1),

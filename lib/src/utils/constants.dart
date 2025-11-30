@@ -10,7 +10,8 @@ class Constants {
   static const String detectEndpoint = "/api/mold/detect";
 
   // HISTORY
-  static const String historyEndpoint = "/api/history";
+   static const String historyEndpoint = "/api/history/";
+   static const String historyBase = "/api/history";
 
   // CHATBOT
   static const String chatbotStartEndpoint = "/api/chatbot/start";
