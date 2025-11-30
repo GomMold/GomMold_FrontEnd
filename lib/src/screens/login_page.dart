@@ -30,6 +30,9 @@ class _LoginPageState extends State<LoginPage> {
     return emailRegex.hasMatch(email);
   }
 
+  /// --------------------------------------------------------------
+  /// LOGIN HANDLER (Updated for ResponseWrapper)
+  /// --------------------------------------------------------------
   Future<void> _handleLogin() async {
     if (!_formKey.currentState!.validate()) return;
 
@@ -41,25 +44,22 @@ class _LoginPageState extends State<LoginPage> {
     final resp = await _apiService.login(email, password);
 
     setState(() => _isLoading = false);
-
     if (!mounted) return;
 
-    if (resp['statusCode'] == 200) {
-      final token = resp['body']['data']['token'];
-      final user = resp['body']['data']['user'];
+    if (resp.statusCode == 200 && resp.data != null) {
+      final token = resp.data["token"];
+      final user = resp.data["user"];
 
-      // Save token + user
       await _authService.saveToken(token);
       await _authService.saveUser(user);
 
-      // Navigate to homepage
       Navigator.pushReplacementNamed(context, '/home');
     } else {
-      // Show backend error message
-      final message = resp['body']['message'] ?? "Login failed. Try again.";
-
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(message)),
+        SnackBar(
+          content: Text(resp.message ?? "Login failed. Try again."),
+          backgroundColor: Colors.red.shade700,
+        ),
       );
     }
   }
@@ -68,6 +68,9 @@ class _LoginPageState extends State<LoginPage> {
     Navigator.pushNamed(context, '/signup');
   }
 
+  /// --------------------------------------------------------------
+  /// UI BUILD
+  /// --------------------------------------------------------------
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,33 +82,31 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               const SizedBox(height: 40),
 
-              // LOGO SECTION
+              /// LOGO SECTION
               Center(
-              child: Column(
-              children: [
-              Image.asset(
-              'assets/images/logo.png',
-              width: 260,            
-              fit: BoxFit.contain,   
-              ),
-
-              const SizedBox(height: 20), 
-
-              const Text(
-              'AI- Driven Mold Detection',
-              style: TextStyle(
-                  fontFamily: 'Inter',
-                  fontSize: 13,        
-                  color: Color(0xFF253F05),
+                child: Column(
+                  children: [
+                    Image.asset(
+                      'assets/images/logo.png',
+                      width: 260,
+                      fit: BoxFit.contain,
+                    ),
+                    const SizedBox(height: 20),
+                    const Text(
+                      'AI- Driven Mold Detection',
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 13,
+                        color: Color(0xFF253F05),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
-        ),
 
               const SizedBox(height: 60),
 
-              // TITLE
+              /// TITLE
               const Text(
                 'Log In',
                 style: TextStyle(
@@ -127,13 +128,12 @@ class _LoginPageState extends State<LoginPage> {
 
               const SizedBox(height: 32),
 
-              // FORM
+              /// FORM
               Form(
                 key: _formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // EMAIL FIELD
                     const Text(
                       'Email',
                       style: TextStyle(
@@ -173,7 +173,7 @@ class _LoginPageState extends State<LoginPage> {
 
                     const SizedBox(height: 24),
 
-                    // PASSWORD FIELD
+                    /// PASSWORD FIELD
                     const Text(
                       'Password',
                       style: TextStyle(
@@ -216,7 +216,7 @@ class _LoginPageState extends State<LoginPage> {
 
               const SizedBox(height: 40),
 
-              // LOGIN BUTTON
+              /// LOGIN BUTTON
               Center(
                 child: GestureDetector(
                   onTap: _isLoading ? null : _handleLogin,
@@ -235,8 +235,7 @@ class _LoginPageState extends State<LoginPage> {
                             height: 20,
                             child: CircularProgressIndicator(
                               strokeWidth: 2,
-                              valueColor:
-                                  AlwaysStoppedAnimation<Color>(Colors.white),
+                              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                             ),
                           )
                         : const Text(
@@ -254,7 +253,7 @@ class _LoginPageState extends State<LoginPage> {
 
               const SizedBox(height: 24),
 
-              // SIGNUP LINK
+              /// SIGNUP LINK
               Center(
                 child: GestureDetector(
                   onTap: _navigateToSignup,

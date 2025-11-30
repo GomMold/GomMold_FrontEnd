@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../services/api_service.dart';
+import '../services/auth_service.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -12,7 +14,11 @@ class _SignUpPageState extends State<SignUpPage> {
   final _emailController = TextEditingController();
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
+
   bool _isLoading = false;
+
+  final ApiService _apiService = ApiService();
+  final AuthService _authService = AuthService();
 
   @override
   void dispose() {
@@ -22,26 +28,41 @@ class _SignUpPageState extends State<SignUpPage> {
     super.dispose();
   }
 
-  bool _isValidEmail(String email) {
-    final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+\$');
-    return emailRegex.hasMatch(email);
-  }
-
-  void _handleSignUp() {
-    if (!_formKey.currentState!.validate()) {
-      return;
-    }
+  /// -------------------------------------------------------------
+  /// SIGNUP HANDLER (uses NEW ApiService ResponseWrapper)
+  /// -------------------------------------------------------------
+  Future<void> _handleSignUp() async {
+    if (!_formKey.currentState!.validate()) return;
 
     setState(() => _isLoading = true);
 
-    // Simulate API call
-    Future.delayed(const Duration(seconds: 2), () {
-      if (mounted) {
-        setState(() => _isLoading = false);
-        // Navigate to home page
-        Navigator.pushReplacementNamed(context, '/home');
-      }
-    });
+    final email = _emailController.text.trim();
+    final username = _usernameController.text.trim();
+    final password = _passwordController.text.trim();
+
+    final resp = await _apiService.signup(email, password, username);
+
+    setState(() => _isLoading = false);
+
+    if (!mounted) return;
+
+    if (resp.statusCode == 200 && resp.data != null) {
+      final token = resp.data["token"];
+      final user = resp.data["user"];
+
+      // save auth
+      await _authService.saveToken(token);
+      await _authService.saveUser(user);
+
+      Navigator.pushReplacementNamed(context, '/home');
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(resp.message ?? "Sign up failed. Try again."),
+          backgroundColor: Colors.red.shade700,
+        ),
+      );
+    }
   }
 
   void _navigateToLogin() {
@@ -58,7 +79,8 @@ class _SignUpPageState extends State<SignUpPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 40),
-              // Logo and tagline section
+
+              /// LOGO + TAGLINE
               Center(
                 child: Column(
                   children: [
@@ -73,60 +95,60 @@ class _SignUpPageState extends State<SignUpPage> {
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 13,
-                        fontWeight: FontWeight.normal,
                         color: Color(0xFF253F05),
                       ),
                     ),
                   ],
                 ),
               ),
+
               const SizedBox(height: 40),
-              // Sign Up title
+
               const Text(
                 'Sign Up',
                 style: TextStyle(
                   fontFamily: 'Inter',
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
                 ),
               ),
               const SizedBox(height: 4),
-              // Subtitle
+
               const Text(
                 'Create your GomMold account',
                 style: TextStyle(
                   fontFamily: 'Inter',
                   fontSize: 13,
                   fontStyle: FontStyle.italic,
-                  color: Colors.black,
                 ),
               ),
+
               const SizedBox(height: 32),
-              // Form
+
+              /// ------------------- FORM -------------------
               Form(
                 key: _formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Email field
+                    /// EMAIL
                     const Text(
                       'Email',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
                       ),
                     ),
                     const SizedBox(height: 8),
+
                     TextFormField(
                       controller: _emailController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: 'Enter your email',
                         filled: true,
-                        fillColor: Color.fromARGB(41, 130, 130, 130),
+                        fillColor: const Color.fromARGB(41, 130, 130, 130),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide.none,
@@ -140,30 +162,32 @@ class _SignUpPageState extends State<SignUpPage> {
                         if (value == null || value.isEmpty) {
                           return 'Email is required';
                         }
-                        if (!_isValidEmail(value)) {
+                        if (!value.contains("@")) {
                           return 'Enter a valid email';
                         }
                         return null;
                       },
                     ),
+
                     const SizedBox(height: 24),
-                    // Username field
+
+                    /// USERNAME
                     const Text(
                       'Username',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
                       ),
                     ),
                     const SizedBox(height: 8),
+
                     TextFormField(
                       controller: _usernameController,
                       decoration: InputDecoration(
                         hintText: 'Enter your username',
                         filled: true,
-                        fillColor: Color.fromARGB(41, 130, 130, 130),
+                        fillColor: const Color.fromARGB(41, 130, 130, 130),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide.none,
@@ -183,25 +207,27 @@ class _SignUpPageState extends State<SignUpPage> {
                         return null;
                       },
                     ),
+
                     const SizedBox(height: 24),
-                    // Password field
+
+                    /// PASSWORD
                     const Text(
                       'Password',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
                       ),
                     ),
                     const SizedBox(height: 8),
+
                     TextFormField(
                       controller: _passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
                         hintText: 'Enter your password',
                         filled: true,
-                        fillColor: Color.fromARGB(41, 130, 130, 130),
+                        fillColor: const Color.fromARGB(41, 130, 130, 130),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide.none,
@@ -224,8 +250,10 @@ class _SignUpPageState extends State<SignUpPage> {
                   ],
                 ),
               ),
+
               const SizedBox(height: 40),
-              // Sign Up button
+
+              /// SIGN UP BUTTON
               Center(
                 child: GestureDetector(
                   onTap: _isLoading ? null : _handleSignUp,
@@ -244,9 +272,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             height: 20,
                             child: CircularProgressIndicator(
                               strokeWidth: 2,
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                Colors.white,
-                              ),
+                              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                             ),
                           )
                         : const Text(
@@ -261,8 +287,10 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
               ),
+
               const SizedBox(height: 24),
-              // Log In link
+
+              /// LOGIN LINK
               Center(
                 child: GestureDetector(
                   onTap: _navigateToLogin,
@@ -274,9 +302,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         color: Colors.black,
                       ),
                       children: [
-                        TextSpan(
-                          text: 'Already had an account? ',
-                        ),
+                        TextSpan(text: 'Already had an account? '),
                         TextSpan(
                           text: 'Log In',
                           style: TextStyle(
@@ -290,6 +316,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
               ),
+
               const SizedBox(height: 40),
             ],
           ),

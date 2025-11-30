@@ -7,7 +7,7 @@ import 'src/screens/initial_page.dart';
 import 'src/screens/login_page.dart';
 import 'src/screens/sign_up_page.dart';
 import 'src/screens/homepage_time.dart';
-import 'src/screens/identify_page.dart';
+//import 'src/screens/identify_page.dart';
 import 'src/screens/image_page.dart';
 import 'src/screens/chatbot_page.dart';
 
@@ -39,9 +39,9 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginPage(),
         '/signup': (context) => const SignUpPage(),
         '/home': (context) => const HomepageTime(),
-        '/identify': (context) => const IdentifyPage(),
+        //'/identify': (context) => const IdentifyPage(),
         '/image': (context) => const ImagePage(),
-        '/chatbot': (context) => const ChatBotPage(),
+        '/chatbot': (context) => const ChatbotInterfacePage(),
       },
     );
   }

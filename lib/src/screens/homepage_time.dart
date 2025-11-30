@@ -1,26 +1,52 @@
 import 'package:flutter/material.dart';
+import '../services/api_service.dart';
 
-class HomepageTime extends StatelessWidget {
+class HomepageTime extends StatefulWidget {
   const HomepageTime({super.key});
 
-  static const _logoAsset = 'assets/images/Initial page.png';
-  static const _itemBg = Color.fromARGB(84, 148, 162, 129); // rgba(148,162,129,0.33)
+  @override
+  State<HomepageTime> createState() => _HomepageTimeState();
+}
 
-  final List<Map<String, String>> _history = const [
-    {'title': "Coolat’s room", 'date': '2025-11-20 19:55'},
-    {'title': 'Kitchen Wall', 'date': '2025-11-18 16:02'},
-    {'title': 'Bathroom Walls', 'date': '2025-11-15 12:25'},
-    {'title': 'Furniture', 'date': '2025-11-13 00:03'},
-    {'title': 'Windows Sill', 'date': '2025-11-10 09:17'},
-  ];
+class _HomepageTimeState extends State<HomepageTime> {
+  bool _isLoading = true;
+  List<Map<String, dynamic>> _history = [];
 
-  Widget _buildHistoryItem(BuildContext context, int index) {
+  @override
+  void initState() {
+    super.initState();
+    _fetchHistory();
+  }
+
+  /// ---------------------------------------------------------
+  /// FETCH HISTORY FROM BACKEND
+  /// ---------------------------------------------------------
+  Future<void> _fetchHistory() async {
+    setState(() => _isLoading = true);
+
+    final response = await ApiService().getHistory();
+
+    if (response.statusCode == 200 && response.data != null) {
+      setState(() {
+        _history = List<Map<String, dynamic>>.from(response.data);
+        _isLoading = false;
+      });
+    } else {
+      setState(() => _isLoading = false);
+      print("Error fetching history: ${response.message}");
+    }
+  }
+
+  /// ---------------------------------------------------------
+  /// HISTORY ITEM UI
+  /// ---------------------------------------------------------
+  Widget _buildHistoryItem(int index) {
     final item = _history[index];
+
     return Container(
-      width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
       decoration: BoxDecoration(
-        color: _itemBg,
+        color: const Color.fromARGB(84, 148, 162, 129),
         borderRadius: BorderRadius.circular(15),
       ),
       child: Row(
@@ -28,18 +54,17 @@ class HomepageTime extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
-              '${index + 1}. ${item['title']}',
+              '${index + 1}. ${item["title"]}',
               style: const TextStyle(
                 fontFamily: 'Inter',
                 fontSize: 14,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 color: Colors.black,
               ),
             ),
           ),
-          const SizedBox(width: 12),
           Text(
-            item['date']!,
+            item["created_at"] ?? "",
             style: const TextStyle(
               fontFamily: 'Inter',
               fontSize: 14,
@@ -52,78 +77,112 @@ class HomepageTime extends StatelessWidget {
     );
   }
 
+  /// ---------------------------------------------------------
+  /// BUILD UI
+  /// ---------------------------------------------------------
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 16),
-                Center(
+        child: _isLoading
+            ? const Center(
+                child: CircularProgressIndicator(color: Color(0xFF94A281)),
+              )
+            : SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Image.asset(
-                        _logoAsset,
-                        width: 170,
-                        height: 80,
-                        fit: BoxFit.contain,
-                      ),
-                      const SizedBox(height: 8),
-                      const Text(
-                        'AI- Driven Mold Detection',
-                        style: TextStyle(
-                          fontFamily: 'Inter',
-                          fontSize: 14,
-                          color: Color(0xFF253F05),
+                      const SizedBox(height: 16),
+
+                      /// Logo + Subtitle
+                      Center(
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              'assets/images/logo.png',
+                              width: 170,
+                              height: 80,
+                            ),
+                            const SizedBox(height: 8),
+                            const Text(
+                              'AI- Driven Mold Detection',
+                              style: TextStyle(
+                                fontFamily: 'Inter',
+                                fontSize: 14,
+                                color: Color(0xFF253F05),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
+
+                      const SizedBox(height: 28),
+
+                      /// Title
+                      const Text(
+                        "History",
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+
+                      const SizedBox(height: 20),
+
+                      /// History Items
+                      _history.isEmpty
+                          ? const Center(
+                              child: Text(
+                                "No history yet.",
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            )
+                          : Column(
+                              children: List.generate(
+                                _history.length,
+                                (index) => Padding(
+                                  padding: EdgeInsets.only(
+                                    bottom: index == _history.length - 1
+                                        ? 8
+                                        : 20,
+                                  ),
+                                  child: _buildHistoryItem(index),
+                                ),
+                              ),
+                            ),
+
+                      const SizedBox(height: 80),
                     ],
                   ),
                 ),
-                const SizedBox(height: 28),
-                const Text(
-                  'History',
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ),
-                const SizedBox(height: 20),
-                // History list
-                Column(
-                  children: List.generate(
-                    _history.length,
-                    (i) => Padding(
-                      padding: EdgeInsets.only(bottom: i == _history.length - 1 ? 8 : 20),
-                      child: _buildHistoryItem(context, i),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 24),
-                const SizedBox(height: 80),
-              ],
-            ),
-          ),
-        ),
+              ),
       ),
-      // Bottom navigation bar (simple reproduction of Figma tab bar)
+
+      /// ---------------------------------------------------------
+      /// BOTTOM NAVIGATION BAR
+      /// ---------------------------------------------------------
       bottomNavigationBar: Container(
         height: 78,
         decoration: const BoxDecoration(
           color: Colors.white,
-          boxShadow: [BoxShadow(color: Color(0x1A000000), offset: Offset(0, -0.5))],
+          boxShadow: [
+            BoxShadow(
+              color: Color(0x1A000000),
+              offset: Offset(0, -0.5),
+            ),
+          ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/chatbot');
+              },
               icon: const Icon(Icons.chat_bubble_outline, size: 28),
             ),
             Container(
@@ -132,12 +191,16 @@ class HomepageTime extends StatelessWidget {
                 shape: BoxShape.circle,
               ),
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/image');
+                },
                 icon: const Icon(Icons.camera_alt_outlined, size: 28),
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/settings');
+              },
               icon: const Icon(Icons.settings_outlined, size: 28),
             ),
           ],
