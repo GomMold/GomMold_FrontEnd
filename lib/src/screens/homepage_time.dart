@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/api_service.dart';
+import 'identify_page.dart';
 
 class HomepageTime extends StatefulWidget {
   const HomepageTime({super.key});
@@ -53,51 +54,55 @@ class _HomepageTimeState extends State<HomepageTime> {
       borderRadius: BorderRadius.circular(15),
     ),
     child: Row(
-      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-         // IMAGE
-    if (item["image_url"] != null && item["image_url"] != "")
-      ClipRRect(
-        borderRadius: BorderRadius.circular(10),
-        child: Image.network(
-          item["image_url"],
-          width: 70,
-          height: 70,
-          fit: BoxFit.cover,
-        ),
-      ),
-
-    const SizedBox(width: 14),
-
-    //text section
+        // -------------------------
+        // CLICKABLE TITLE
+        // -------------------------
         Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                '${index + 1}. ${item["analysis_name"] ?? "Untitled"}',
-                style: const TextStyle(
-                  fontFamily: 'Inter',
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => IdentifyPage(
+                    imagePath: item["image_url"],
+                    analysisName: item["analysis_name"],
+                    timestamp: item["timestamp"],
+                    message: item["message"],
+                    status: item["result"],
+                    analysisId: item["id"],
+                  ),
                 ),
-              ),
-
-              const SizedBox(height: 4),
-
-              Text(
-                item["message"] ?? "",
-                style: TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.bold,
-                  color: isMold ? Colors.red : Colors.green,
+              );
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '${index + 1}. ${item["analysis_name"] ?? "Untitled"}',
+                  style: const TextStyle(
+                    fontFamily: 'Inter',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.blue, // clickable
+                    decoration: TextDecoration.underline,
+                  ),
                 ),
-              ),
-            ],
+                const SizedBox(height: 4),
+                Text(
+                  item["message"] ?? "",
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                    color: isMold ? Colors.red : Colors.green,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
 
+        // TIME
         Text(
           item["timestamp"] ?? "",
           style: const TextStyle(
@@ -111,6 +116,8 @@ class _HomepageTimeState extends State<HomepageTime> {
     ),
   );
 }
+
+
 
 
   /// ---------------------------------------------------------

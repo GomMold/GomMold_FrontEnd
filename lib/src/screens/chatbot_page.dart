@@ -116,6 +116,7 @@ class _ChatbotInterfacePageState extends State<ChatbotInterfacePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
+        automaticallyImplyLeading: false, 
         title: const Text("Gom", style: TextStyle(color: Colors.black)),
         centerTitle: true,
         actions: [

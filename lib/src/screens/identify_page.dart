@@ -112,7 +112,11 @@ class _IdentifyPageState extends State<IdentifyPage> {
     const Color borderColor = Color(0xFFA6B79A);
 
     // True if backend says "warning" → mold detected
-    final bool moldDetected = widget.status == "warning";
+    //final bool moldDetected = widget.status == "warning";
+    final bool moldDetected =
+    widget.status.toLowerCase().contains("warning") ||
+    widget.message.toLowerCase().contains("mold");
+
 
     return Scaffold(
       backgroundColor: Colors.white,
