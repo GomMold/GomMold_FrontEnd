@@ -113,9 +113,13 @@ class _IdentifyPageState extends State<IdentifyPage> {
 
     // True if backend says "warning" → mold detected
     //final bool moldDetected = widget.status == "warning";
+    final msg = widget.message.toLowerCase().trim();
+    final status = widget.status.toLowerCase().trim();
+
     final bool moldDetected =
-    widget.status.toLowerCase().contains("warning") ||
-    widget.message.toLowerCase().contains("mold");
+        msg == "mold detected" ||
+        status == "warning";
+
 
 
     return Scaffold(
