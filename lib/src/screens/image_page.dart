@@ -143,10 +143,6 @@ class _ImagePageState extends State<ImagePage> {
                        size: 60, color: Color(0xFF94A281)),
                        ),
                    )
-                    /*? Image.asset(
-                        'assets/images/Image Page.png',
-                        fit: BoxFit.cover,
-                      )*/
                     : Image.file(
                         _selectedImage!,
                         fit: BoxFit.cover,

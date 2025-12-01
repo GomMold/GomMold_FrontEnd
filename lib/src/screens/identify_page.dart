@@ -119,9 +119,6 @@ class _IdentifyPageState extends State<IdentifyPage> {
     final bool moldDetected =
         msg == "mold detected" ||
         status == "warning";
-
-
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
