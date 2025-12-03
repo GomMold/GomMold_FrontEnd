@@ -18,7 +18,7 @@
   <li><strong>Storage:</strong> Firebase Storage</li>
   <li><strong>Local Storage:</strong> Flutter Secure Storage, Shared Preferences</li>
   <li><strong>Image Processing:</strong> Image Picker</li>
-  <li><strong>Platforms:</strong> Android, iOS, Web, macOS, Windows, Linux</li>
+  <li><strong>Platforms:</strong> Android, Web, macOS, Windows</li>
 </ul>
 
 <hr />
