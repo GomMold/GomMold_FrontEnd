@@ -271,11 +271,6 @@ flutter run -d &lt;device_id&gt;
   <li><strong>macOS:</strong> macOS desktop, Chrome</li>
 </ul>
 
-<h4>Build desktop release (optional):</h4>
-<pre><code>flutter build windows
-flutter build macos
-</code></pre>
-
 <hr>
 
 <h3>🌐 <strong>Web Deployment</strong></h3>
@@ -287,14 +282,6 @@ flutter build macos
 </code></pre>
 
 <p>Select <strong>Chrome</strong> or <strong>Edge</strong> when prompted.</p>
-
-<h4>Build Web Release (optional):</h4>
-<pre><code>flutter build web
-</code></pre>
-
-<p>Output directory:</p>
-<pre><code>build/web/
-</code></pre>
 
 <p><em>Note: Flutter automatically generates folders for all platforms (Android, iOS, macOS, Windows, Linux). However, this project is deployed only on Android, Windows, macOS, and Web. iOS and Linux are not used for deployment.</em></p>
 
