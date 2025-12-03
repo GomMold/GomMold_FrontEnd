@@ -226,26 +226,43 @@ flutter run -d chrome
 
 <hr />
 
-<h2>📱 Build for Deployment</h2>
+<h2>📱 <strong>Build & Deployment</strong></h2>
 
-<h3>Build Release APK (Android)</h3>
+<h3>✔ <strong>Android Deployment (USB Only)</strong></h3>
 
-<pre><code class="language-bash">flutter build apk --release
+<p>The Android application is run directly on a Samsung device through USB debugging from Windows.</p>
+
+<ol>
+  <li>Enable <strong>Developer Options</strong> on Samsung device</li>
+  <li>Enable <strong>USB Debugging</strong></li>
+  <li>Connect phone to laptop via USB</li>
+  <li>Run:
+    <pre><code>flutter devices
+flutter run -d &lt;device_id&gt;
+</code></pre>
+  </li>
+</ol>
+
+<p>No APK build required.</p>
+
+<hr>
+
+<h3>💻 <strong>Desktop Deployment (Windows & macOS)</strong></h3>
+
+<p>The application can be executed on desktop environments using Flutter’s device selection menu. When running the project, Flutter automatically detects available desktop and browser devices.</p>
+
+<h4>Run on desktop:</h4>
+<pre><code>flutter run
 </code></pre>
 
-<p>Output:</p>
+<p>After running the command, select one of the available options from the device list:</p>
 
-<pre><code>build/app/outputs/flutter-apk/app-release.apk
-</code></pre>
+<ul>
+  <li><strong>Windows:</strong> Windows desktop, Chrome, Edge</li>
+  <li><strong>macOS:</strong> macOS desktop, Chrome</li>
+</ul>
 
-<h3>💻 <strong>Desktop Deployment (Windows/macOS)</strong></h3>
-
-<h4>Run desktop app:</h4>
-<pre><code>flutter run -d windows
-flutter run -d macos
-</code></pre>
-
-<h4>Build desktop release:</h4>
+<h4>Build desktop release (optional):</h4>
 <pre><code>flutter build windows
 flutter build macos
 </code></pre>
@@ -254,18 +271,18 @@ flutter build macos
 
 <h3>🌐 <strong>Web Deployment</strong></h3>
 
-<h4>Run in Chrome:</h4>
-<pre><code>flutter run -d chrome
+<p>The project can also be run in a web browser. Flutter will list Chrome and Edge as available devices.</p>
+
+<h4>Run in browser:</h4>
+<pre><code>flutter run
 </code></pre>
 
-<h4>Build Web Release:</h4>
+<p>Select <strong>Chrome</strong> or <strong>Edge</strong> when prompted.</p>
+
+<h4>Build Web Release (optional):</h4>
 <pre><code>flutter build web
 </code></pre>
 
-<p>Output in:</p>
+<p>Output directory:</p>
 <pre><code>build/web/
 </code></pre>
-
-<hr>
-
-<p><em>No Procfile required for Flutter apps.</em></p>
