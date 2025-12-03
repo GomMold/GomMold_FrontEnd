@@ -107,17 +107,18 @@ cd GomMold_FrontEnd
       <td><code>android/app/</code></td>
     </tr>
     <tr>
-      <td>iOS</td>
-      <td><code>GoogleService-Info.plist</code></td>
-      <td><code>ios/Runner/</code></td>
-    </tr>
-    <tr>
       <td>macOS</td>
       <td><code>GoogleService-Info.plist</code></td>
       <td><code>macos/Runner/</code></td>
     </tr>
+    <tr>
+      <td>Windows</td>
+      <td><em>No additional configuration required</em></td>
+      <td>—</td>
+    </tr>
   </tbody>
 </table>
+
 
 <h3>Run the app</h3>
 
@@ -137,30 +138,6 @@ cd GomMold_FrontEnd
 </ul>
 
 <hr />
-
-<h3><strong>Add Firebase configuration</strong></h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Platform</th>
-      <th>File</th>
-      <th>Location</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Android</td>
-      <td><code>google-services.json</code></td>
-      <td><code>android/app/</code></td>
-    </tr>
-    <tr>
-      <td>macOS</td>
-      <td><code>GoogleService-Info.plist</code></td>
-      <td><code>macos/Runner/</code></td>
-    </tr>
-  </tbody>
-</table>
 
 <hr>
 
@@ -318,3 +295,6 @@ flutter build macos
 <p>Output directory:</p>
 <pre><code>build/web/
 </code></pre>
+
+<p><em>Note: Flutter automatically generates folders for all platforms (Android, iOS, macOS, Windows, Linux). However, this project is deployed only on Android, Windows, macOS, and Web. iOS and Linux are not used for deployment.</em></p>
+
