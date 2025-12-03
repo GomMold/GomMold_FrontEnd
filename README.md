@@ -124,14 +124,46 @@ cd GomMold_FrontEnd
 <pre><code class="language-bash">flutter run
 </code></pre>
 
-<p>Run on specific device:</p>
+<h4>Run on a specific device:</h4>
 
-<pre><code class="language-bash">flutter run -d android
-flutter run -d ios
-flutter run -d chrome
+<pre><code>flutter run
 </code></pre>
 
+<p>After running the command, select the target device from the list presented by Flutter.</p>
+
+<ul>
+  <li><strong>Windows:</strong> Windows desktop, Chrome, Edge, Samsung Android device (USB)</li>
+  <li><strong>macOS:</strong> macOS desktop, Chrome</li>
+</ul>
+
 <hr />
+
+<h3><strong>Add Firebase configuration</strong></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Platform</th>
+      <th>File</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Android</td>
+      <td><code>google-services.json</code></td>
+      <td><code>android/app/</code></td>
+    </tr>
+    <tr>
+      <td>macOS</td>
+      <td><code>GoogleService-Info.plist</code></td>
+      <td><code>macos/Runner/</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
 
 <h2>🔐 Environment Configuration</h2>
 
