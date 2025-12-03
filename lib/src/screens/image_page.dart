@@ -63,7 +63,7 @@ class _ImagePageState extends State<ImagePage> {
       timestamp: data["timestamp"]?? "",
       message: data["message"]?? "No message",
       status: data["result"]?? "safe",
-      analysisId: data["id"]?? "",  // MUST MATCH FIREBASE DOC ID
+      analysisId: data["id"]?? "",  
       ),
     ),
   );

@@ -12,7 +12,6 @@ class HomepageTime extends StatefulWidget {
 class _HomepageTimeState extends State<HomepageTime> {
   bool _isLoading = true;
   List<dynamic> _history = [];
-  //List<Map<String, dynamic>> _history = [];
 
   @override
   void initState() {
@@ -31,7 +30,6 @@ class _HomepageTimeState extends State<HomepageTime> {
     if (response.statusCode == 200 && response.data != null) {
       setState(() {
         _history = response.data; 
-       // _history = List<Map<String, dynamic>>.from(response.data);
         _isLoading = false;
       });
     } else {
@@ -116,8 +114,6 @@ class _HomepageTimeState extends State<HomepageTime> {
     ),
   );
 }
-
-
 
 
   /// ---------------------------------------------------------
@@ -231,12 +227,6 @@ class _HomepageTimeState extends State<HomepageTime> {
                ),
             ),
 
-            /*IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/chatbot');
-              },
-              icon: const Icon(Icons.chat_bubble_outline, size: 28),
-            ),*/
             Container(
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.black12, width: 1),

@@ -8,7 +8,6 @@ import 'src/screens/initial_page.dart';
 import 'src/screens/login_page.dart';
 import 'src/screens/sign_up_page.dart';
 import 'src/screens/homepage_time.dart';
-//import 'src/screens/identify_page.dart';
 import 'src/screens/image_page.dart';
 import 'src/screens/chatbot_page.dart';
 import 'src/screens/settings_page.dart';
@@ -16,7 +15,7 @@ import 'src/screens/settings_page.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-   // 🔥 Hide system navigation bar & go fully immersive
+   //Hide system navigation bar & go fully immersive
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   
   // Initialize Firebase

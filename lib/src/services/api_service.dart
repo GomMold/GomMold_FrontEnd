@@ -151,7 +151,6 @@ class ApiService {
   /// ------------------------------------------------------------
   Future<ResponseWrapper> updateAnalysisTitle(
       String docId, String newTitle) async {
-    //final url = Uri.parse("${Constants.baseUrl}/api/history/$docId");
     final url = Uri.parse("${Constants.baseUrl}${Constants.historyBase}/$docId");
 
     try {

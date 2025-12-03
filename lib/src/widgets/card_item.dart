@@ -1,4 +1,3 @@
-// card_item.dart
 import 'package:flutter/material.dart';
 
 class CardItem extends StatelessWidget {

@@ -70,7 +70,7 @@ class _IdentifyPageState extends State<IdentifyPage> {
 
               setState(() => editedTitle = newName);
 
-              /// 🔥 UPDATE TITLE IN BACKEND FIRESTORE
+              /// TITLE IN BACKEND FIRESTORE
               final result = await ApiService()
                   .updateAnalysisTitle(widget.analysisId, newName);
 
@@ -80,9 +80,6 @@ class _IdentifyPageState extends State<IdentifyPage> {
                     '/home',
                   (route) => false,
 
-               /*if (result.statusCode == 200) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text("Title updated successfully")),*/
             );
           } else {
             ScaffoldMessenger.of(context).showSnackBar(
